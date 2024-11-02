@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/utils/app_colors.dart';
 import 'package:svg_flutter/svg.dart';
 
 class PageViewItem extends StatelessWidget {
@@ -36,7 +37,7 @@ class PageViewItem extends StatelessWidget {
                 child: SvgPicture.asset(image),
               ),
               const Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(12),
                 child: Text(
                   'تخط',
                   style: TextStyle(fontSize: 20),
@@ -49,10 +50,14 @@ class PageViewItem extends StatelessWidget {
         title,
         const SizedBox(height: 24),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 36),
           child: Text(
             subtitle,
             textAlign: TextAlign.center,
+            style: const TextStyle(
+              color: AppColors.secondaryColor,
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
       ],
