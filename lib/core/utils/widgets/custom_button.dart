@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/app_styles/app_colors.dart';
 
+import '../app_styles/app_text_styles.dart';
+
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
@@ -25,12 +27,7 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           title,
-          style: const TextStyle(
-            fontFamily: 'Cairo',
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
-            color: Colors.white,
-          ),
+          style: TextStyles.bold16.copyWith(color: Colors.white),
         ),
       ),
     );
