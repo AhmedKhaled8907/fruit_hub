@@ -3,9 +3,11 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruit_hub/features/splash/views/splash_view.dart';
 
 import 'core/helper/on_generate_routes.dart';
+import 'core/services/shared_preferences_singleton.dart';
 import 'generated/l10n.dart';
 
-void main() {
+void main() async{
+  await SharedPreferencesSingleton.init();
   runApp(const FruitHub());
 }
 

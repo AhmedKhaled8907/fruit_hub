@@ -40,13 +40,18 @@ class PageViewItem extends StatelessWidget {
                 left: 0,
                 child: SvgPicture.asset(image),
               ),
-              Visibility(
-                visible: isVisible,
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Text(
-                    'تخط',
-                    style: TextStyles.semiBold16.copyWith(),
+              GestureDetector(
+                onTap: () {
+                  // todo Navigator.of(context).pushReplacementNamed()
+                },
+                child: Visibility(
+                  visible: isVisible,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Text(
+                      'تخط',
+                      style: TextStyles.semiBold16.copyWith(),
+                    ),
                   ),
                 ),
               ),
