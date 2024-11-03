@@ -48,7 +48,7 @@ class OnBoardingPageView extends StatelessWidget {
           image: Assets.imagesPageViewItem2Image,
           backgroundImage: Assets.imagesPageViewItem2BackgroundImage,
           title: Text(
-            'ابحث وتسوق',
+            'ابحث و تسوق',
             textAlign: TextAlign.center,
             style: TextStyles.bold23,
           ),

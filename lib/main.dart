@@ -5,7 +5,6 @@ import 'package:fruit_hub/features/splash/views/splash_view.dart';
 import 'core/helper/on_generate_routes.dart';
 import 'generated/l10n.dart';
 
-
 void main() {
   runApp(const FruitHub());
 }
@@ -25,6 +24,9 @@ class FruitHub extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: 'Cairo',
+      ),
       title: 'Fruit Hub',
       onGenerateRoute: onGenerateRoutes,
       initialRoute: SplashView.routeName,
