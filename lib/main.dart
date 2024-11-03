@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:fruit_hub/core/utils/app_colors.dart';
+import 'package:fruit_hub/core/utils/app_styles/app_colors.dart';
 import 'package:fruit_hub/features/splash/views/splash_view.dart';
 
 import 'core/helper/on_generate_routes.dart';

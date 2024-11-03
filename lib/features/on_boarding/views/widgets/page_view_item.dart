@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/helper/constants.dart';
 import 'package:fruit_hub/core/services/shared_preferences_singleton.dart';
-import 'package:fruit_hub/core/utils/app_colors.dart';
+import 'package:fruit_hub/core/utils/app_styles/app_colors.dart';
 import 'package:svg_flutter/svg.dart';
 
-import '../../../../core/utils/app_text_styles.dart';
+import '../../../../core/utils/app_styles/app_text_styles.dart';
 import '../../../auth/presentation/views/login_view.dart';
 
 class PageViewItem extends StatelessWidget {
