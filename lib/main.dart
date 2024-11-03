@@ -6,8 +6,9 @@ import 'core/helper/on_generate_routes.dart';
 import 'core/services/shared_preferences_singleton.dart';
 import 'generated/l10n.dart';
 
-void main() async{
-  await SharedPreferencesSingleton.init();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Prefs.init();
   runApp(const FruitHub());
 }
 
