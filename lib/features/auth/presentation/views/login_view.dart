@@ -13,6 +13,7 @@ class LoginView extends StatelessWidget {
       appBar: customAppBar(
         context,
         title: 'تسجيل الدخول',
+        showLeading: false,
       ),
       body: const LoginViewBody(),
     );
