@@ -9,6 +9,7 @@ import '../../../../../core/utils/app_styles/app_text_styles.dart';
 import '../../../../../core/utils/widgets/custom_button.dart';
 import '../../../../../core/utils/widgets/custom_divider.dart';
 import 'dont_have_an_account.dart';
+import '../forgot_password.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -37,12 +38,19 @@ class LoginViewBody extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            Align(
-              alignment: AlignmentDirectional.centerEnd,
-              child: Text(
-                'نسيت كلمة المرور؟',
-                style: TextStyles.semiBold13.copyWith(
-                  color: AppColors.lightPrimaryColor,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).pushNamed(
+                  ForgotPasswordView.routeName,
+                );
+              },
+              child: Align(
+                alignment: AlignmentDirectional.centerEnd,
+                child: Text(
+                  'نسيت كلمة المرور؟',
+                  style: TextStyles.semiBold13.copyWith(
+                    color: AppColors.lightPrimaryColor,
+                  ),
                 ),
               ),
             ),
