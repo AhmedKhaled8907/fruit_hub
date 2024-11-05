@@ -5,7 +5,9 @@ import 'package:fruit_hub/core/utils/app_styles/app_text_styles.dart';
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     super.key,
-    required this.hintText,required this.keyboardType, this.suffixIcon,
+    required this.hintText,
+    required this.keyboardType,
+    this.suffixIcon,
   });
 
   final String hintText;
@@ -18,13 +20,20 @@ class CustomTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       style: TextStyles.semiBold16,
       decoration: InputDecoration(
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 16,
+        ),
         hintText: hintText,
         hintStyle: TextStyles.bold13.copyWith(
           color: const Color(0xff949D9E),
         ),
         filled: true,
         fillColor: AppColors.textFormFieldColor,
-        suffixIcon: suffixIcon,
+        suffixIcon: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: suffixIcon,
+        ),
         enabledBorder: outline(),
         focusedBorder: outline(),
         errorBorder: outline(),

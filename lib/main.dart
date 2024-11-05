@@ -13,6 +13,10 @@ void main() async {
   runApp(const FruitHub());
 }
 
+Widget preview() {
+  return const FruitHub();
+}
+
 class FruitHub extends StatelessWidget {
   const FruitHub({super.key});
 
