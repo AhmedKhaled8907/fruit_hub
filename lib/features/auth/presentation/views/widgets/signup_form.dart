@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hub/core/helper/build_error_bar.dart';
+import 'package:fruit_hub/core/helper/my_validators.dart';
 
 import '../../../../../core/utils/widgets/custom_button.dart';
 import '../../../../../core/utils/widgets/custom_text_form_field.dart';
@@ -20,6 +22,7 @@ class _SignupFormState extends State<SignupForm> {
   final _formKey = GlobalKey<FormState>();
   var autovalidateMode = AutovalidateMode.disabled;
   late String email, password, name;
+  bool isTermsAccepted = false;
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +35,9 @@ class _SignupFormState extends State<SignupForm> {
             onSaved: (value) {
               name = value!;
             },
+            validator: (value) {
+              return AppValidators.displayNameValidator(value);
+            },
             hintText: 'الاسم الكامل',
             keyboardType: TextInputType.text,
           ),
@@ -39,6 +45,9 @@ class _SignupFormState extends State<SignupForm> {
           CustomTextFormField(
             onSaved: (value) {
               email = value!;
+            },
+            validator: (value) {
+              return AppValidators.emailValidator(value);
             },
             hintText: 'البريد الإلكتروني',
             keyboardType: TextInputType.emailAddress,
@@ -50,17 +59,28 @@ class _SignupFormState extends State<SignupForm> {
             },
           ),
           const SizedBox(height: 16),
-          const TermsAndConditionsWidget(),
+          TermsAndConditionsWidget(
+            onChanged: (value) {
+              isTermsAccepted = value;
+            },
+          ),
           const SizedBox(height: 24),
           CustomButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                context.read<SignupCubit>().createUserWithEmailAndPassword(
-                      email: email,
-                      password: password,
-                      name: name,
-                    );
+                if (isTermsAccepted) {
+                  context.read<SignupCubit>().createUserWithEmailAndPassword(
+                        email: email,
+                        password: password,
+                        name: name,
+                      );
+                } else {
+                  buildErrorBar(
+                    context,
+                    'يجب الموافقة علي الشروط و الأحكام أولا',
+                  );
+                }
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;

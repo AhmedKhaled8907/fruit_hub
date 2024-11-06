@@ -4,6 +4,7 @@ import 'package:fruit_hub/core/utils/app_styles/app_images.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_social_button.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_text_form_field.dart';
 
+import '../../../../../core/helper/my_validators.dart';
 import '../../../../../core/utils/app_styles/app_colors.dart';
 import '../../../../../core/utils/app_styles/app_text_styles.dart';
 import '../../../../../core/utils/widgets/custom_button.dart';
@@ -24,15 +25,21 @@ class LoginViewBody extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 24),
-            const CustomTextFormField(
+            CustomTextFormField(
+              validator: (value) {
+                return AppValidators.emailValidator(value);
+              },
               hintText: 'البريد الإلكتروني',
               keyboardType: TextInputType.emailAddress,
             ),
             const SizedBox(height: 16),
-            const CustomTextFormField(
+            CustomTextFormField(
+              validator: (value) {
+                return AppValidators.passwordValidator(value);
+              },
               hintText: 'كلمة المرور',
               keyboardType: TextInputType.visiblePassword,
-              suffixIcon: Icon(
+              suffixIcon: const Icon(
                 Icons.visibility,
                 color: Color(0xffC9CECF),
               ),

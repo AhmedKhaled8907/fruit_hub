@@ -10,12 +10,14 @@ class CustomTextFormField extends StatelessWidget {
     this.suffixIcon,
     this.onSaved,
     this.obscureText = false,
+    required this.validator,
   });
 
   final String hintText;
   final TextInputType? keyboardType;
   final Widget? suffixIcon;
   final void Function(String?)? onSaved;
+  final String? Function(String?)? validator;
 
   final bool obscureText;
 
@@ -24,12 +26,7 @@ class CustomTextFormField extends StatelessWidget {
     return TextFormField(
       obscureText: obscureText,
       onSaved: onSaved,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'هذا الحقل مطلوب';
-        }
-        return null;
-      },
+      validator: validator,
       keyboardType: keyboardType,
       style: TextStyles.semiBold16,
       decoration: InputDecoration(

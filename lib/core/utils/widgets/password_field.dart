@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../helper/my_validators.dart';
 import 'custom_text_form_field.dart';
 
 class PasswordField extends StatefulWidget {
@@ -20,6 +21,9 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
+      validator: (value) {
+        return AppValidators.passwordValidator(value);
+      },
       obscureText: obscureText,
       onSaved: widget.onSaved,
       hintText: 'كلمة المرور',

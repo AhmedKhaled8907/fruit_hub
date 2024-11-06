@@ -5,6 +5,8 @@ import 'package:fruit_hub/core/utils/widgets/custom_app_bar.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_button.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_text_form_field.dart';
 
+import '../../../../core/helper/my_validators.dart';
+
 class ForgotPasswordView extends StatelessWidget {
   const ForgotPasswordView({super.key});
   static const String routeName = '/forgot-password';
@@ -31,7 +33,10 @@ class ForgotPasswordView extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 32),
-              const CustomTextFormField(
+              CustomTextFormField(
+                validator: (value) {
+                  return AppValidators.emailValidator(value);
+                },
                 hintText: 'البريد الإلكتروني',
                 keyboardType: TextInputType.emailAddress,
               ),
