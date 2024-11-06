@@ -32,7 +32,7 @@ class AuthRepoImpl extends AuthRepo {
     } catch (e) {
       return left(
         ServerFailure(
-          'Something went wrong. Please try again later.',
+          'لقد حدث خطأ ما. حاول مرة أخرى',
         ),
       );
     }

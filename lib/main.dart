@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:fruit_hub/core/services/get_it_service.dart';
 import 'package:fruit_hub/core/utils/app_styles/app_colors.dart';
 import 'package:fruit_hub/features/splash/views/splash_view.dart';
 
@@ -15,6 +16,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   await Prefs.init();
+  setupGetIt();
   runApp(const FruitHub());
 }
 
