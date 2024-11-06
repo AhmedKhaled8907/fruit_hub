@@ -17,7 +17,7 @@ class FirebaseAuthService {
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         throw CustomExceptions(
-          message: "كلمة المرور قصيرة جداً.",
+          message: "كلمة المرور ضعيفة جداً.",
         );
       } else if (e.code == 'email-already-in-use') {
         throw CustomExceptions(
