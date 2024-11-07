@@ -4,11 +4,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fruit_hub/core/errors/custom_exceptions.dart';
 
 class FirebaseAuthService {
+  var auth = FirebaseAuth.instance;
   Future<User> createUserWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
-    var auth = FirebaseAuth.instance;
     try {
       final credential = await auth.createUserWithEmailAndPassword(
         email: email,
@@ -51,7 +51,6 @@ class FirebaseAuthService {
     required String email,
     required String password,
   }) async {
-    var auth = FirebaseAuth.instance;
     try {
       final credential = await auth.signInWithEmailAndPassword(
         email: email,
@@ -62,13 +61,17 @@ class FirebaseAuthService {
       log(
         'Exception in FirebaseAuthService.loginUserWithEmailAndPassword: ${e.toString()} and code is ${e.code}',
       );
-      if (e.code == 'wrong-password') {
+      if (e.code == 'invalid-credential') {
         throw CustomExceptions(
-          message: "كلمة المرور غير صحيحة.",
+          message: "البريد الإلكتروني أو كلمة المرور خاطئة.",
         );
       } else if (e.code == 'user-not-found') {
         throw CustomExceptions(
           message: "لا يوجد حساب بهذا البريد الإلكتروني.",
+        );
+      } else if (e.code == 'wrong-password') {
+        throw CustomExceptions(
+          message: "كلمة المرور خاطئة.",
         );
       } else if (e.code == 'network-request-failed') {
         throw CustomExceptions(

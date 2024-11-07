@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/helper/my_validators.dart';
+import 'package:fruit_hub/features/auth/presentation/cubits/login_cubit/login_cubit.dart';
 
-import '../../../../../core/utils/app_styles/app_colors.dart';
-import '../../../../../core/utils/app_styles/app_text_styles.dart';
 import '../../../../../core/utils/widgets/custom_button.dart';
 import '../../../../../core/utils/widgets/custom_text_form_field.dart';
 import '../../../../../core/utils/widgets/password_field.dart';
-import '../forgot_password.dart';
+import 'forgot_password.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({
@@ -47,28 +47,17 @@ class _LoginFormState extends State<LoginForm> {
             },
           ),
           const SizedBox(height: 16),
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context).pushNamed(
-                ForgotPasswordView.routeName,
-              );
-            },
-            child: Align(
-              alignment: AlignmentDirectional.centerEnd,
-              child: Text(
-                'نسيت كلمة المرور؟',
-                style: TextStyles.semiBold13.copyWith(
-                  color: AppColors.lightPrimaryColor,
-                ),
-              ),
-            ),
-          ),
+          const ForgotPasswordWidget(),
           const SizedBox(height: 36),
           CustomButton(
             title: 'تسجيل الدخول',
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
+                context.read<LoginCubit>().loginUserWithEmailAndPassword(
+                      email: email,
+                      password: password,
+                    );
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;
