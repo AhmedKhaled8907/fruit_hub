@@ -2,15 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/helper/constants.dart';
 import 'package:fruit_hub/core/utils/app_styles/app_images.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_social_button.dart';
-import 'package:fruit_hub/core/utils/widgets/custom_text_form_field.dart';
 
-import '../../../../../core/helper/my_validators.dart';
-import '../../../../../core/utils/app_styles/app_colors.dart';
-import '../../../../../core/utils/app_styles/app_text_styles.dart';
-import '../../../../../core/utils/widgets/custom_button.dart';
 import '../../../../../core/utils/widgets/custom_divider.dart';
 import 'dont_have_an_account.dart';
-import '../forgot_password.dart';
+import 'login_form.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -25,47 +20,7 @@ class LoginViewBody extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 24),
-            CustomTextFormField(
-              validator: (value) {
-                return AppValidators.emailValidator(value);
-              },
-              hintText: 'البريد الإلكتروني',
-              keyboardType: TextInputType.emailAddress,
-            ),
-            const SizedBox(height: 16),
-            CustomTextFormField(
-              validator: (value) {
-                return AppValidators.passwordValidator(value);
-              },
-              hintText: 'كلمة المرور',
-              keyboardType: TextInputType.visiblePassword,
-              suffixIcon: const Icon(
-                Icons.visibility,
-                color: Color(0xffC9CECF),
-              ),
-            ),
-            const SizedBox(height: 16),
-            GestureDetector(
-              onTap: () {
-                Navigator.of(context).pushNamed(
-                  ForgotPasswordView.routeName,
-                );
-              },
-              child: Align(
-                alignment: AlignmentDirectional.centerEnd,
-                child: Text(
-                  'نسيت كلمة المرور؟',
-                  style: TextStyles.semiBold13.copyWith(
-                    color: AppColors.lightPrimaryColor,
-                  ),
-                ),
-              ),
-            ),
-            const SizedBox(height: 36),
-            CustomButton(
-              title: 'تسجيل الدخول',
-              onPressed: () {},
-            ),
+            const LoginForm(),
             const SizedBox(height: 36),
             const DontHaveAnAccount(),
             const SizedBox(height: 36),
@@ -95,3 +50,4 @@ class LoginViewBody extends StatelessWidget {
     );
   }
 }
+

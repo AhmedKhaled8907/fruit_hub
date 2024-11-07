@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hub/core/helper/build_error_bar.dart';
 import 'package:fruit_hub/core/helper/my_validators.dart';
 
+import '../../../../../core/utils/app_styles/app_colors.dart';
+import '../../../../../core/utils/app_styles/app_text_styles.dart';
 import '../../../../../core/utils/widgets/custom_button.dart';
 import '../../../../../core/utils/widgets/custom_text_form_field.dart';
 import '../../../../../core/utils/widgets/password_field.dart';
-import '../../cubits/signup_cubit/signup_cubit.dart';
-import 'terms_and_conditions.dart';
+import '../forgot_password.dart';
 
-class SignupForm extends StatefulWidget {
-  const SignupForm({
+class LoginForm extends StatefulWidget {
+  const LoginForm({
     super.key,
   });
 
   @override
-  State<SignupForm> createState() => _SignupFormState();
+  State<LoginForm> createState() => _LoginFormState();
 }
 
-class _SignupFormState extends State<SignupForm> {
+class _LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
   var autovalidateMode = AutovalidateMode.disabled;
-  late String email, password, name;
+  late String email, password;
   bool isTermsAccepted = false;
 
   @override
@@ -31,17 +30,6 @@ class _SignupFormState extends State<SignupForm> {
       autovalidateMode: autovalidateMode,
       child: Column(
         children: [
-          CustomTextFormField(
-            onSaved: (value) {
-              name = value!;
-            },
-            validator: (value) {
-              return AppValidators.displayNameValidator(value);
-            },
-            hintText: 'الاسم الكامل',
-            keyboardType: TextInputType.text,
-          ),
-          const SizedBox(height: 16),
           CustomTextFormField(
             onSaved: (value) {
               email = value!;
@@ -59,35 +47,34 @@ class _SignupFormState extends State<SignupForm> {
             },
           ),
           const SizedBox(height: 16),
-          TermsAndConditionsWidget(
-            onChanged: (value) {
-              isTermsAccepted = value;
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).pushNamed(
+                ForgotPasswordView.routeName,
+              );
             },
+            child: Align(
+              alignment: AlignmentDirectional.centerEnd,
+              child: Text(
+                'نسيت كلمة المرور؟',
+                style: TextStyles.semiBold13.copyWith(
+                  color: AppColors.lightPrimaryColor,
+                ),
+              ),
+            ),
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: 36),
           CustomButton(
+            title: 'تسجيل الدخول',
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                if (isTermsAccepted) {
-                  context.read<SignupCubit>().createUserWithEmailAndPassword(
-                        email: email,
-                        password: password,
-                        name: name,
-                      );
-                } else {
-                  buildErrorBar(
-                    context,
-                    'يجب الموافقة علي الشروط و الأحكام أولا',
-                  );
-                }
               } else {
                 setState(() {
                   autovalidateMode = AutovalidateMode.always;
                 });
               }
             },
-            title: 'إنشاء حساب جديد',
           ),
         ],
       ),
