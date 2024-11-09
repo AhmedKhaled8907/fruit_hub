@@ -3,10 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/features/auth/domain/entities/user_entity.dart';
 import 'package:fruit_hub/features/auth/domain/repos/auth_repo.dart';
 
-part 'login_state.dart';
+part 'signin_state.dart';
 
-class LoginCubit extends Cubit<LoginState> {
-  LoginCubit(this.authRepo) : super(LoginInitial());
+class SigninCubit extends Cubit<SigninState> {
+  SigninCubit(this.authRepo) : super(SigninInitial());
 
   final AuthRepo authRepo;
 
@@ -14,18 +14,18 @@ class LoginCubit extends Cubit<LoginState> {
     required String email,
     required String password,
   }) async {
-    emit(LoginLoading());
+    emit(SigninLoading());
 
-    var result = await authRepo.loginUserWithEmailAndPassword(
+    var result = await authRepo.signinUserWithEmailAndPassword(
       email: email,
       password: password,
     );
     result.fold(
       (failure) => emit(
-        LoginFailure(message: failure.message),
+        SigninFailure(message: failure.message),
       ),
       (user) => emit(
-        LoginSuccess(userEntity: user),
+        SigninSuccess(userEntity: user),
       ),
     );
   }

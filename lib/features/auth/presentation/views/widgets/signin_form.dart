@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/helper/my_validators.dart';
-import 'package:fruit_hub/features/auth/presentation/cubits/login_cubit/login_cubit.dart';
+import 'package:fruit_hub/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 
 import '../../../../../core/utils/widgets/custom_button.dart';
 import '../../../../../core/utils/widgets/custom_text_form_field.dart';
 import '../../../../../core/utils/widgets/password_field.dart';
 import 'forgot_password.dart';
 
-class LoginForm extends StatefulWidget {
-  const LoginForm({
+class SigninForm extends StatefulWidget {
+  const SigninForm({
     super.key,
   });
 
   @override
-  State<LoginForm> createState() => _LoginFormState();
+  State<SigninForm> createState() => _SigninFormState();
 }
 
-class _LoginFormState extends State<LoginForm> {
+class _SigninFormState extends State<SigninForm> {
   final _formKey = GlobalKey<FormState>();
   var autovalidateMode = AutovalidateMode.disabled;
   late String email, password;
@@ -54,7 +54,7 @@ class _LoginFormState extends State<LoginForm> {
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
-                context.read<LoginCubit>().loginUserWithEmailAndPassword(
+                context.read<SigninCubit>().loginUserWithEmailAndPassword(
                       email: email,
                       password: password,
                     );

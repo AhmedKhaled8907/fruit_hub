@@ -48,7 +48,7 @@ class FirebaseAuthService {
     }
   }
 
-  Future<User> loginUserWithEmailAndPassword({
+  Future<User> signinUserWithEmailAndPassword({
     required String email,
     required String password,
   }) async {

@@ -5,10 +5,10 @@ import 'package:fruit_hub/core/utils/widgets/custom_social_button.dart';
 
 import '../../../../../core/utils/widgets/custom_divider.dart';
 import 'dont_have_an_account.dart';
-import 'login_form.dart';
+import 'signin_form.dart';
 
-class LoginViewBody extends StatelessWidget {
-  const LoginViewBody({super.key});
+class SigninViewBody extends StatelessWidget {
+  const SigninViewBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class LoginViewBody extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 24),
-            const LoginForm(),
+            const SigninForm(),
             const SizedBox(height: 36),
             const DontHaveAnAccount(),
             const SizedBox(height: 36),
@@ -50,4 +50,3 @@ class LoginViewBody extends StatelessWidget {
     );
   }
 }
-
