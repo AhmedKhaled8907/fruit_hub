@@ -29,8 +29,8 @@ class SigninViewBody extends StatelessWidget {
             const CustomDivider(),
             const SizedBox(height: 24),
             CustomSocialButton(
-              onPressed: () {
-                context.read<SigninCubit>().signinUserWithGoogle();
+              onPressed: () async {
+                await context.read<SigninCubit>().signinUserWithGoogle();
               },
               title: 'تسجيل بواسطة جوجل',
               image: Assets.imagesGoogleIcon,
@@ -43,7 +43,9 @@ class SigninViewBody extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             CustomSocialButton(
-              onPressed: () {},
+              onPressed: () async {
+                await context.read<SigninCubit>().signinUserWithFacebook();
+              },
               title: 'تسجيل بواسطة فيسبوك',
               image: Assets.imagesFacebookIcon,
             ),

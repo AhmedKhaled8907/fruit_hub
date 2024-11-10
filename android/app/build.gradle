@@ -10,7 +10,7 @@ plugins {
 
 android {
     namespace = "com.example.fruit_hub"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 34
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -39,9 +39,15 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig = signingConfigs.debug
         }
-    }
+    } 
+
 }
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+     implementation 'com.facebook.android:facebook-login:latest.release'
+
 }
