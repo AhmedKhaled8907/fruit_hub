@@ -17,8 +17,8 @@ class SplashViewBody extends StatefulWidget {
 class _SplashViewBodyState extends State<SplashViewBody> {
   @override
   void initState() {
-    executeNavigation();
     super.initState();
+    executeNavigation();
   }
 
   @override
@@ -42,13 +42,16 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     );
   }
 
-  Future<void> executeNavigation() {
-    bool isBoardingViewSeen = Prefs.getBool(kIsBoardingViewSeen);
-    return Future.delayed(const Duration(seconds: 3), () {
-      if (isBoardingViewSeen && mounted) {
-        Navigator.pushReplacementNamed(context, SigninView.routeName);
-      } else if (!isBoardingViewSeen && mounted) {
-        Navigator.pushReplacementNamed(context, OnBoardingView.routeName);
+  Future<void> executeNavigation() async {
+    bool isBoardingViewSeen = Prefs.getBool(kIsBoardingViewSeen) ?? false;
+
+    await Future.delayed(const Duration(seconds: 3), () {
+      if (mounted) {
+        Navigator.pushNamedAndRemoveUntil(
+          context,
+          isBoardingViewSeen ? SigninView.routeName : OnBoardingView.routeName,
+          (route) => false,
+        );
       }
     });
   }

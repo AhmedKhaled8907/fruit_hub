@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruit_hub/core/helper/build_error_bar.dart';
 import 'package:fruit_hub/core/helper/constants.dart';
 import 'package:fruit_hub/core/utils/app_styles/app_images.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_social_button.dart';
@@ -29,25 +30,31 @@ class SigninViewBody extends StatelessWidget {
             const CustomDivider(),
             const SizedBox(height: 24),
             CustomSocialButton(
-              onPressed: () async {
-                await context.read<SigninCubit>().signinUserWithGoogle();
+              onPressed: () {
+                context.read<SigninCubit>().signinUserWithGoogle();
               },
               title: 'تسجيل بواسطة جوجل',
               image: Assets.imagesGoogleIcon,
             ),
             const SizedBox(height: 16),
             CustomSocialButton(
-              onPressed: () {},
-              title: 'تسجيل بواسطة أبل',
-              image: Assets.imagesApplIcon,
-            ),
-            const SizedBox(height: 16),
-            CustomSocialButton(
-              onPressed: () async {
-                await context.read<SigninCubit>().signinUserWithFacebook();
+              onPressed: () {
+                context.read<SigninCubit>().signinUserWithFacebook();
               },
               title: 'تسجيل بواسطة فيسبوك',
               image: Assets.imagesFacebookIcon,
+            ),
+            const SizedBox(height: 16),
+            CustomSocialButton(
+              onPressed: () {
+                // context.read<SigninCubit>().signinUserWithApple();
+                buildErrorBar(
+                  context,
+                  'سوف يتم إضافة تسجيل بواسطة أبل مستقبلا',
+                );
+              },
+              title: 'تسجيل بواسطة أبل',
+              image: Assets.imagesApplIcon,
             ),
             const SizedBox(height: 36),
           ],

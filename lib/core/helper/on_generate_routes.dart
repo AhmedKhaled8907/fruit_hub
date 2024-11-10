@@ -35,11 +35,7 @@ Route<dynamic> onGenerateRoutes(RouteSettings settings) {
 
     default:
       return MaterialPageRoute(
-        builder: (context) => const Scaffold(
-          body: Center(
-            child: Text('Page not found'),
-          ),
-        ),
+        builder: (context) => const Scaffold(),
       );
   }
 }
