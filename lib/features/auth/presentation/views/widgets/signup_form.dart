@@ -57,6 +57,9 @@ class _SignupFormState extends State<SignupForm> {
             onSaved: (value) {
               password = value!;
             },
+            validator: (value) {
+              return AppValidators.passwordValidator(value);
+            },
           ),
           const SizedBox(height: 16),
           TermsAndConditionsWidget(

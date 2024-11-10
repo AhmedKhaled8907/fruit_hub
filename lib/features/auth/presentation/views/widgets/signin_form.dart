@@ -45,6 +45,9 @@ class _SigninFormState extends State<SigninForm> {
             onSaved: (value) {
               password = value!;
             },
+            validator: (value) {
+              return null;
+            },
           ),
           const SizedBox(height: 16),
           const ForgotPasswordWidget(),

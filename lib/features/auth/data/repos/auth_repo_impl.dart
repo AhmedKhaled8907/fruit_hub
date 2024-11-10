@@ -70,7 +70,9 @@ class AuthRepoImpl extends AuthRepo {
         password: password,
       );
 
-      return right(UserModel.fromFirebaseUser(user));
+      var userEntity = await getUserData(uId: user.uid);
+
+      return right(userEntity);
     } on Exception catch (e) {
       return left(ServerFailure(e.toString()));
     } catch (e) {
@@ -145,8 +147,9 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future<void> addUserData({required UserEntity user}) async {
     await databaseService.addData(
-      path: BackEndPoints.addUserData,
+      path: BackEndPoints.getUserData,
       data: user.toMap(),
+      documentId: user.uId,
     );
   }
 
@@ -154,5 +157,14 @@ class AuthRepoImpl extends AuthRepo {
     if (user != null) {
       await firebaseAuthService.deleteUser();
     }
+  }
+
+  @override
+  Future<UserEntity> getUserData({required String uId}) async {
+    var data = await databaseService.getData(
+      path: BackEndPoints.getUserData,
+      documentId: uId,
+    );
+    return UserModel.fromJson(data);
   }
 }

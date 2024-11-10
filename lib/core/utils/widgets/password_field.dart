@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 
-import '../../helper/my_validators.dart';
 import 'custom_text_form_field.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField({
     super.key,
     required this.onSaved,
+    required this.validator,
   });
 
   final void Function(String?)? onSaved;
+  final String? Function(String?)? validator;
 
   @override
   State<PasswordField> createState() => _PasswordFieldState();
@@ -21,9 +22,7 @@ class _PasswordFieldState extends State<PasswordField> {
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
-      validator: (value) {
-        return AppValidators.passwordValidator(value);
-      },
+      validator: widget.validator,
       obscureText: obscureText,
       onSaved: widget.onSaved,
       hintText: 'كلمة المرور',
