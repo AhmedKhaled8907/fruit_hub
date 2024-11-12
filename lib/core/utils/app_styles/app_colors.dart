@@ -8,4 +8,5 @@ abstract class AppColors {
   static const Color secondaryColor = Color(0xFFF4A91F);
   static const Color lightSecondaryColor = Color(0xFFF8C76D);
   static const Color textFormFieldColor = Color(0xFFF9FAFA);
+  static const Color itemBackgroundColor = Color(0xFFF3F5F7);
 }
