@@ -10,6 +10,7 @@ class CustomHomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      contentPadding: EdgeInsets.zero,
       leading: Image.asset(Assets.imagesProfileImage),
       title: Text(
         'صباح الخير !..',

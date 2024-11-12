@@ -70,6 +70,7 @@ class _SignupFormState extends State<SignupForm> {
           const SizedBox(height: 24),
           CustomButton(
             onPressed: () {
+              FocusScope.of(context).unfocus();
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 if (isTermsAccepted) {

@@ -36,7 +36,7 @@ class CustomTextFormField extends StatelessWidget {
         ),
         hintText: hintText,
         hintStyle: TextStyles.bold13.copyWith(
-          color: const Color(0xff949D9E),
+          color: AppColors.lightGreyColor,
         ),
         filled: true,
         fillColor: AppColors.textFormFieldColor,

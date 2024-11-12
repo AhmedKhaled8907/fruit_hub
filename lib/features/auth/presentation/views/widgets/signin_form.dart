@@ -55,6 +55,7 @@ class _SigninFormState extends State<SigninForm> {
           CustomButton(
             title: 'تسجيل الدخول',
             onPressed: () {
+              FocusScope.of(context).unfocus();
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 context.read<SigninCubit>().loginUserWithEmailAndPassword(
