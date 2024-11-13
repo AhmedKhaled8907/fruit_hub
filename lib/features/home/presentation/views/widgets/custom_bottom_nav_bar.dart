@@ -39,9 +39,19 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
           var index = e.key;
           var entity = e.value;
 
-          return NavigationBarItemSelector(
-            isSelected: selectedIndex == index,
-            entity: entity,
+          return Expanded(
+            flex: selectedIndex == index ? 3 : 2,
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+              child: NavigationBarItemSelector(
+                isSelected: selectedIndex == index,
+                entity: entity,
+              ),
+            ),
           );
         }).toList(),
       ),
