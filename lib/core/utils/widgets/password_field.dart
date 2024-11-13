@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../generated/l10n.dart';
 import 'custom_text_form_field.dart';
 
 class PasswordField extends StatefulWidget {
@@ -25,7 +26,7 @@ class _PasswordFieldState extends State<PasswordField> {
       validator: widget.validator,
       obscureText: obscureText,
       onSaved: widget.onSaved,
-      hintText: 'كلمة المرور',
+      hintText: S.of(context).passwordSignIn,
       keyboardType: TextInputType.visiblePassword,
       suffixIcon: GestureDetector(
         onTap: () {

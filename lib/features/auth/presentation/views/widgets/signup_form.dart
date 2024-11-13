@@ -6,6 +6,7 @@ import 'package:fruit_hub/core/helper/my_validators.dart';
 import '../../../../../core/utils/widgets/custom_button.dart';
 import '../../../../../core/utils/widgets/custom_text_form_field.dart';
 import '../../../../../core/utils/widgets/password_field.dart';
+import '../../../../../generated/l10n.dart';
 import '../../cubits/signup_cubit/signup_cubit.dart';
 import 'terms_and_conditions.dart';
 
@@ -38,7 +39,7 @@ class _SignupFormState extends State<SignupForm> {
             validator: (value) {
               return AppValidators.displayNameValidator(value);
             },
-            hintText: 'الاسم الكامل',
+            hintText: S.of(context).fullName,
             keyboardType: TextInputType.text,
           ),
           const SizedBox(height: 16),
@@ -49,7 +50,7 @@ class _SignupFormState extends State<SignupForm> {
             validator: (value) {
               return AppValidators.emailValidator(value);
             },
-            hintText: 'البريد الإلكتروني',
+            hintText: S.of(context).emailSignin,
             keyboardType: TextInputType.emailAddress,
           ),
           const SizedBox(height: 16),
@@ -91,7 +92,7 @@ class _SignupFormState extends State<SignupForm> {
                 });
               }
             },
-            title: 'إنشاء حساب جديد',
+            title: S.of(context).signup,
           ),
         ],
       ),

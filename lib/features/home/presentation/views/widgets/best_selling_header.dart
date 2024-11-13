@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/generated/l10n.dart';
 
 import '../../../../../core/utils/app_styles/app_colors.dart';
 import '../../../../../core/utils/app_styles/app_text_styles.dart';
@@ -14,11 +15,11 @@ class BestSellingHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'الأكثر مبيعًا',
+          S.of(context).bestSelling,
           style: TextStyles.bold16,
         ),
         Text(
-          'المزيد',
+          S.of(context).more,
           style: TextStyles.regular13.copyWith(
             color: AppColors.lightGreyColor,
           ),

@@ -3,9 +3,13 @@ import 'package:fruit_hub/features/auth/presentation/views/widgets/custom_check_
 
 import '../../../../../core/utils/app_styles/app_colors.dart';
 import '../../../../../core/utils/app_styles/app_text_styles.dart';
+import '../../../../../generated/l10n.dart';
 
 class TermsAndConditionsWidget extends StatefulWidget {
-  const TermsAndConditionsWidget({super.key, required this.onChanged,});
+  const TermsAndConditionsWidget({
+    super.key,
+    required this.onChanged,
+  });
 
   final ValueChanged<bool> onChanged;
 
@@ -36,39 +40,20 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
             TextSpan(
               children: [
                 TextSpan(
-                  text: 'من خلال إنشاء حساب ، فإنك توافق على ',
+                  text: S.of(context).byCreatingAnAccountYouAgreeToOur,
                   style: TextStyles.semiBold13.copyWith(
                     color: const Color(0xFF949D9E),
                   ),
                 ),
                 TextSpan(
-                  text: 'الشروط والأحكام',
+                  text: S.of(context).termsAndConditions,
                   style: TextStyles.semiBold13.copyWith(
                     color: AppColors.lightPrimaryColor,
                   ),
-                ),
-                const TextSpan(
-                  text: ' ',
-                  style: TextStyles.semiBold13,
-                ),
-                TextSpan(
-                  text: 'الخاصة',
-                  style: TextStyles.semiBold13.copyWith(
-                    color: AppColors.lightPrimaryColor,
-                  ),
-                ),
-                const TextSpan(
-                  text: ' ',
-                  style: TextStyles.semiBold13,
-                ),
-                TextSpan(
-                  text: 'بنا',
-                  style: TextStyles.semiBold13
-                      .copyWith(color: AppColors.lightPrimaryColor),
                 ),
               ],
             ),
-            textAlign: TextAlign.right,
+            textAlign: TextAlign.start,
           ),
         ),
       ],

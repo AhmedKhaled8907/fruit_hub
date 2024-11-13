@@ -7,6 +7,7 @@ import 'package:fruit_hub/core/utils/widgets/custom_social_button.dart';
 import 'package:fruit_hub/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 
 import '../../../../../core/utils/widgets/custom_divider.dart';
+import '../../../../../generated/l10n.dart';
 import 'dont_have_an_account.dart';
 import 'signin_form.dart';
 
@@ -33,7 +34,7 @@ class SigninViewBody extends StatelessWidget {
               onPressed: () {
                 context.read<SigninCubit>().signinUserWithGoogle();
               },
-              title: 'تسجيل بواسطة جوجل',
+              title: S.of(context).signinWithGoogle,
               image: Assets.imagesGoogleIcon,
             ),
             const SizedBox(height: 16),
@@ -41,7 +42,7 @@ class SigninViewBody extends StatelessWidget {
               onPressed: () {
                 context.read<SigninCubit>().signinUserWithFacebook();
               },
-              title: 'تسجيل بواسطة فيسبوك',
+              title: S.of(context).signinWithFacebook,
               image: Assets.imagesFacebookIcon,
             ),
             const SizedBox(height: 16),
@@ -53,7 +54,7 @@ class SigninViewBody extends StatelessWidget {
                   'سوف يتم إضافة تسجيل بواسطة أبل مستقبلا',
                 );
               },
-              title: 'تسجيل بواسطة أبل',
+              title: S.of(context).signinWithApple,
               image: Assets.imagesApplIcon,
             ),
             const SizedBox(height: 36),

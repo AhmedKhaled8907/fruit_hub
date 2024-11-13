@@ -6,6 +6,7 @@ import 'package:fruit_hub/core/utils/widgets/custom_button.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_text_form_field.dart';
 
 import '../../../../core/helper/my_validators.dart';
+import '../../../../generated/l10n.dart';
 
 class ForgotPasswordView extends StatelessWidget {
   const ForgotPasswordView({super.key});
@@ -16,7 +17,7 @@ class ForgotPasswordView extends StatelessWidget {
     return Scaffold(
       appBar: customAppBar(
         context,
-        title: 'نسيان كلمة المرور',
+        title: S.of(context).forgotPassword,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -27,7 +28,7 @@ class ForgotPasswordView extends StatelessWidget {
             children: [
               const SizedBox(height: 24),
               Text(
-                'لا تقلق ، ما عليك سوى كتابة البريد الإلكتروني الخاص بك وسنرسل رمز التحقق.',
+                S.of(context).dontWorry,
                 style: TextStyles.semiBold16.copyWith(
                   color: const Color(0xff949D9E),
                 ),
@@ -37,7 +38,7 @@ class ForgotPasswordView extends StatelessWidget {
                 validator: (value) {
                   return AppValidators.emailValidator(value);
                 },
-                hintText: 'البريد الإلكتروني',
+                hintText: S.of(context).emailSignin,
                 keyboardType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 32),
@@ -45,7 +46,7 @@ class ForgotPasswordView extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop();
                 },
-                title: 'نسيت كلمة المرور',
+                title: S.of(context).resetPassword,
               ),
             ],
           ),

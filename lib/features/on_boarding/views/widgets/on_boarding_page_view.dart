@@ -4,6 +4,7 @@ import 'package:fruit_hub/features/on_boarding/views/widgets/page_view_item.dart
 
 import '../../../../core/utils/app_styles/app_colors.dart';
 import '../../../../core/utils/app_styles/app_text_styles.dart';
+import '../../../../generated/l10n.dart';
 
 class OnBoardingPageView extends StatelessWidget {
   const OnBoardingPageView({super.key, required this.pageController});
@@ -12,6 +13,8 @@ class OnBoardingPageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isEnglish = Localizations.localeOf(context).languageCode == 'en';
+
     return PageView(
       controller: pageController,
       children: [
@@ -22,38 +25,41 @@ class OnBoardingPageView extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'مرحبا بك في',
+              Text(
+                S.of(context).onBoardingTitle1,
                 style: TextStyles.bold23,
               ),
-              Text(
-                ' Hub',
-                style: TextStyles.bold23.copyWith(
-                  color: AppColors.secondaryColor,
+              if (!isEnglish)
+                Row(
+                  children: [
+                    Text(
+                      S.of(context).hub,
+                      style: TextStyles.bold23.copyWith(
+                        color: AppColors.secondaryColor,
+                      ),
+                    ),
+                    Text(
+                      S.of(context).Fruit,
+                      style: TextStyles.bold23.copyWith(
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              Text(
-                'Fruit',
-                style: TextStyles.bold23.copyWith(
-                  color: AppColors.primaryColor,
-                ),
-              ),
             ],
           ),
-          subtitle:
-              'اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.',
+          subtitle: S.of(context).onBoardingSubtitle1,
         ),
-        const PageViewItem(
+        PageViewItem(
           isVisible: false,
           image: Assets.imagesPageViewItem2Image,
           backgroundImage: Assets.imagesPageViewItem2BackgroundImage,
           title: Text(
-            'ابحث و تسوق',
+            S.of(context).onBoardingTitle2,
             textAlign: TextAlign.center,
             style: TextStyles.bold23,
           ),
-          subtitle:
-              'نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية',
+          subtitle: S.of(context).onBoardingSubtitle2,
         ),
       ],
     );

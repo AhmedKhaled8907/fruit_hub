@@ -21,5 +21,67 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Fruit": MessageLookupByLibrary.simpleMessage("Fruit"),
+        "apple": MessageLookupByLibrary.simpleMessage("Apple"),
+        "bestSelling": MessageLookupByLibrary.simpleMessage("Best Selling"),
+        "byCreatingAnAccountYouAgreeToOur":
+            MessageLookupByLibrary.simpleMessage(
+                "By creating an account, you agree to"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
+        "createNewAccountSignup":
+            MessageLookupByLibrary.simpleMessage("Create New Account"),
+        "discount": MessageLookupByLibrary.simpleMessage("25% Discount"),
+        "dontHaveAccount":
+            MessageLookupByLibrary.simpleMessage("Don’t have an account?"),
+        "dontWorry": MessageLookupByLibrary.simpleMessage(
+            "Don’t worry, just enter your phone number, and we’ll send a verification code."),
+        "eidOffers": MessageLookupByLibrary.simpleMessage("Eid Offers"),
+        "emailSignin": MessageLookupByLibrary.simpleMessage("Email"),
+        "emailSignup": MessageLookupByLibrary.simpleMessage("Email"),
+        "forgotPassword":
+            MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
+        "goodMorning": MessageLookupByLibrary.simpleMessage("Good Morning"),
+        "haveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "hub": MessageLookupByLibrary.simpleMessage("Hub"),
+        "kilo": MessageLookupByLibrary.simpleMessage("kg"),
+        "more": MessageLookupByLibrary.simpleMessage("More"),
+        "onBoardingStartNow": MessageLookupByLibrary.simpleMessage("Start Now"),
+        "onBoardingSubtitle1": MessageLookupByLibrary.simpleMessage(
+            "Discover a unique shopping experience with FruitHUB. Explore our wide selection of premium fresh fruits and get the best deals and high quality."),
+        "onBoardingSubtitle2": MessageLookupByLibrary.simpleMessage(
+            "We offer you the finest handpicked fruits. Check details, images, and ratings to choose the perfect fruit."),
+        "onBoardingTitle1":
+            MessageLookupByLibrary.simpleMessage("Welcome to FruitHUB"),
+        "onBoardingTitle2":
+            MessageLookupByLibrary.simpleMessage("Search and Shop"),
+        "or": MessageLookupByLibrary.simpleMessage("or"),
+        "passwordSignIn": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordSignup": MessageLookupByLibrary.simpleMessage("Password"),
+        "pound": MessageLookupByLibrary.simpleMessage("EGP"),
+        "resetPassword":
+            MessageLookupByLibrary.simpleMessage("Forgot Password"),
+        "resetPasswordAppBar":
+            MessageLookupByLibrary.simpleMessage("Forgot Password"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "shoppingNow": MessageLookupByLibrary.simpleMessage("Shop Now"),
+        "signin": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "signinWithApple":
+            MessageLookupByLibrary.simpleMessage("Sign in with Apple"),
+        "signinWithFacebook":
+            MessageLookupByLibrary.simpleMessage("Sign in with Facebook"),
+        "signinWithGoogle":
+            MessageLookupByLibrary.simpleMessage("Sign in with Google"),
+        "signup": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "skip": MessageLookupByLibrary.simpleMessage("Skip"),
+        "strawberry": MessageLookupByLibrary.simpleMessage("Strawberry"),
+        "termsAndConditions":
+            MessageLookupByLibrary.simpleMessage("our Terms and Conditions"),
+        "username": MessageLookupByLibrary.simpleMessage("Ahmed Khaled"),
+        "watermelon": MessageLookupByLibrary.simpleMessage("Watermelon")
+      };
 }

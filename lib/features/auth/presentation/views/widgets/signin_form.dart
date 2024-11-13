@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/helper/my_validators.dart';
 import 'package:fruit_hub/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
+import 'package:fruit_hub/generated/l10n.dart';
 
 import '../../../../../core/utils/widgets/custom_button.dart';
 import '../../../../../core/utils/widgets/custom_text_form_field.dart';
@@ -37,7 +38,7 @@ class _SigninFormState extends State<SigninForm> {
             validator: (value) {
               return AppValidators.emailValidator(value);
             },
-            hintText: 'البريد الإلكتروني',
+            hintText: S.of(context).emailSignin,
             keyboardType: TextInputType.emailAddress,
           ),
           const SizedBox(height: 16),
@@ -53,7 +54,7 @@ class _SigninFormState extends State<SigninForm> {
           const ForgotPasswordWidget(),
           const SizedBox(height: 36),
           CustomButton(
-            title: 'تسجيل الدخول',
+            title: S.of(context).signin,
             onPressed: () {
               FocusScope.of(context).unfocus();
               if (_formKey.currentState!.validate()) {

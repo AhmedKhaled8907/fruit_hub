@@ -1,0 +1,59 @@
+{
+    "//onBoardingView": "onBoardingView Comment",
+    "skip": "تخطى",
+    "onBoardingTitle1": "مرحبًا بك في",
+    "hub": "Hub",
+    "Fruit": "Fruit",
+    "onBoardingSubtitle1": "اكتشف تجربة تسوق فريدة مع FruitHUB. استكشف مجموعتنا الواسعة من الفواكه الطازجة الممتازة واحصل على أفضل العروض والجودة العالية.",
+    "onBoardingTitle2": "ابحث وتسوق",
+    "onBoardingSubtitle2": "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية",
+    "onBoardingStartNow": "ابدأ الآن",
+
+    "//signinView": "signinView Comment",
+    "signin": "تسجيل دخول",
+    "emailSignin": "البريد الإلكتروني",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "passwordSignIn": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "dontHaveAccount": "ليس لديك حساب؟",
+    "createAccount": "قم بنشاء حساب",
+    "signinWithGoogle": "تسجيل بواسطة جوجل",
+    "signinWithFacebook": "تسجيل بواسطة فيسبوك",
+    "signinWithApple": "تسجيل بواسطة أبل",
+    "or": "أو",
+
+    "//forgotPasswordView": "forgotPasswordView Comment",
+    "resetPasswordAppBar": "نسيان كلمة المرور",
+    "resetPassword": "نسيت كلمة المرور",
+    "dontWorry": "لا تقلق ، ما عليك سوى كتابة رقم هاتفك وسنرسل رمز التحقق.",
+
+    "//signupView": "signupView Comment",
+    "signup": "حساب جديد",
+    "emailSignup": "البريد الإلكتروني",
+    "passwordSignup": "كلمة المرور",
+    "fullName": "الاسم الكامل",
+    "byCreatingAnAccountYouAgreeToOur":"من خلال إنشاء حساب ،  فإنك توافق على",
+    "termsAndConditions": " الشروط والأحكام الخاصة بنا",
+    "createNewAccountSignup":"إنشاء حساب جديد",
+    "haveAnAccount":"تمتلك حساب بالفعل؟",
+
+    "//homeView": "homeView Comment",
+    "goodMorning":"صباح الخير",
+    "username":"أحمد خالد",
+    "search":"ابحث عن",
+    "ُeidOffers":"عروض العيد",
+    "discount":"خصم 25%",
+    "shoppingNow":"تسوق الآن",
+    "more":"المزيد",
+    "bestSelling":"الأكثر مبيعا",
+    "pound":"جنيه",
+    "kilo":"كيلو",
+    "watermelon":"بطيخ",
+    "apple":"تفاح",
+    "strawberry":"فراولة"
+
+    
+
+
+
+}

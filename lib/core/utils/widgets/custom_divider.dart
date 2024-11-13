@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../generated/l10n.dart';
 import '../app_styles/app_text_styles.dart';
 
 class CustomDivider extends StatelessWidget {
@@ -9,7 +10,7 @@ class CustomDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       children: [
         Expanded(
           child: Divider(
@@ -19,7 +20,7 @@ class CustomDivider extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
           child: Text(
-            'أو',
+            S.of(context).or,
             style: TextStyles.semiBold16,
           ),
         ),
