@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "byCreatingAnAccountYouAgreeToOur":
             MessageLookupByLibrary.simpleMessage(
                 "By creating an account, you agree to"),
+        "cart": MessageLookupByLibrary.simpleMessage("Cart"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "createAccount": MessageLookupByLibrary.simpleMessage("Create Account"),
@@ -47,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "goodMorning": MessageLookupByLibrary.simpleMessage("Good Morning"),
         "haveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "hub": MessageLookupByLibrary.simpleMessage("Hub"),
         "kilo": MessageLookupByLibrary.simpleMessage("kg"),
         "more": MessageLookupByLibrary.simpleMessage("More"),
@@ -63,6 +65,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordSignIn": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordSignup": MessageLookupByLibrary.simpleMessage("Password"),
         "pound": MessageLookupByLibrary.simpleMessage("EGP"),
+        "products": MessageLookupByLibrary.simpleMessage("Products"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password"),
         "resetPasswordAppBar":

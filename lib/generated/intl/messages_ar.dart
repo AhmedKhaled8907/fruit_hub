@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "byCreatingAnAccountYouAgreeToOur":
             MessageLookupByLibrary.simpleMessage(
                 "من خلال إنشاء حساب ،  فإنك توافق على"),
+        "cart": MessageLookupByLibrary.simpleMessage("سلة التسوق"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "createAccount": MessageLookupByLibrary.simpleMessage("قم بنشاء حساب"),
@@ -48,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "goodMorning": MessageLookupByLibrary.simpleMessage("صباح الخير"),
         "haveAnAccount":
             MessageLookupByLibrary.simpleMessage("تمتلك حساب بالفعل؟"),
+        "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "hub": MessageLookupByLibrary.simpleMessage("Hub"),
         "kilo": MessageLookupByLibrary.simpleMessage("كيلو"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),
@@ -63,6 +65,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "passwordSignIn": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "passwordSignup": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "pound": MessageLookupByLibrary.simpleMessage("جنيه"),
+        "products": MessageLookupByLibrary.simpleMessage("المنتجات"),
+        "profile": MessageLookupByLibrary.simpleMessage("حسابي"),
         "resetPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "resetPasswordAppBar":

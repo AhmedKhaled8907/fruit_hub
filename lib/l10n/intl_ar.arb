@@ -50,10 +50,13 @@
     "kilo":"كيلو",
     "watermelon":"بطيخ",
     "apple":"تفاح",
-    "strawberry":"فراولة"
+    "strawberry":"فراولة",
 
-    
-
+    "//bottomNavBar": "bottomNavBar Comment",
+    "home":"الرئيسية",
+    "products":"المنتجات",
+    "cart":"سلة التسوق",
+    "profile":"حسابي"
 
 
 }

@@ -34,7 +34,7 @@ class HomeViewBody extends StatelessWidget {
           BestSellingGridView(),
           SliverToBoxAdapter(
             child: const SizedBox(
-              height: kBottomNavigationBarHeight,
+              height: 36,
             ),
           ),
         ],

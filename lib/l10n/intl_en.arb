@@ -50,5 +50,11 @@
     "kilo": "kg",
     "watermelon": "Watermelon",
     "apple": "Apple",
-    "strawberry": "Strawberry"
+    "strawberry": "Strawberry",
+
+    "//bottomNavBar": "bottomNavBar Comment",
+    "home":"Home",
+    "products":"Products",
+    "cart":"Cart",
+    "profile":"Profile"
 }
