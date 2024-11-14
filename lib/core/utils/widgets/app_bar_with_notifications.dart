@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/app_styles/app_text_styles.dart';
 import 'package:fruit_hub/core/utils/widgets/notification_widget.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class AppBarWithNotifications extends StatelessWidget
+    implements PreferredSizeWidget {
   final String title;
 
-  const CustomAppBar({
+  const AppBarWithNotifications({
     super.key,
     required this.title,
   });

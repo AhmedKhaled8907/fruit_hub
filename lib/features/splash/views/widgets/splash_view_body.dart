@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/services/firebase_auth_service.dart';
 import 'package:fruit_hub/core/utils/app_styles/app_images.dart';
 import 'package:fruit_hub/features/auth/presentation/views/signin_view.dart';
 import 'package:fruit_hub/features/home/presentation/views/home_view.dart';
@@ -43,14 +44,30 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     );
   }
 
-  Future<void> executeNavigation() async {
+  void executeNavigation() {
     bool isBoardingViewSeen = Prefs.getBool(kIsBoardingViewSeen) ?? false;
 
-    await Future.delayed(const Duration(seconds: 3), () {
-      if (mounted) {
+    Future.delayed(const Duration(seconds: 3), () {
+      if (isBoardingViewSeen && mounted) {
+        var isLoggedIn = FirebaseAuthService().isSignedIn();
+
+        if (isLoggedIn) {
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            HomeView.routeName,
+            (route) => false,
+          );
+        } else {
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            SigninView.routeName,
+            (route) => false,
+          );
+        }
+      } else if (mounted) {
         Navigator.pushNamedAndRemoveUntil(
           context,
-          isBoardingViewSeen ? HomeView.routeName : OnBoardingView.routeName,
+          OnBoardingView.routeName,
           (route) => false,
         );
       }

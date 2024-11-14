@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/utils/widgets/app_bar_with_notifications.dart';
 import 'package:fruit_hub/generated/l10n.dart';
-import '../../../../core/utils/widgets/custom_app_bar.dart';
 import 'widgets/best_selling_view_body.dart';
 
 class BestSellingView extends StatelessWidget {
@@ -10,7 +10,7 @@ class BestSellingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: AppBarWithNotifications(
         title: S.of(context).bestSelling,
       ),
       body: SafeArea(
