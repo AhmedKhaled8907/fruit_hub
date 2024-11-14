@@ -4,7 +4,7 @@ import 'package:fruit_hub/core/utils/app_styles/app_text_styles.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg;
 
-import '../../../../../generated/l10n.dart';
+import '../../../../../../generated/l10n.dart';
 import 'featured_item_button.dart';
 
 class FeaturedItem extends StatelessWidget {

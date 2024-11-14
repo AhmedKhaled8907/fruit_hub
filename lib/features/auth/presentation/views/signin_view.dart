@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/services/get_it_service.dart';
 import 'package:fruit_hub/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 
-import '../../../../core/utils/widgets/custom_app_bar.dart';
+import '../../../../core/utils/widgets/build_app_bar.dart';
 import '../../../../generated/l10n.dart';
 import '../../domain/repos/auth_repo.dart';
 import 'widgets/signin_view_body_bloc_consumer.dart';
@@ -19,7 +19,7 @@ class SigninView extends StatelessWidget {
         getIt<AuthRepo>(),
       ),
       child: Scaffold(
-        appBar: customAppBar(
+        appBar: buildAppBar(
           context,
           title: S.of(context).signin,
           showLeading: false,

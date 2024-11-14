@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/widgets/fruit_item.dart';
+import '../../../../../../core/utils/widgets/fruit_item.dart';
 
 class BestSellingGridView extends StatelessWidget {
   const BestSellingGridView({super.key});

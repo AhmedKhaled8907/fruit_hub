@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/helper/constants.dart';
 import 'package:fruit_hub/core/utils/app_styles/app_text_styles.dart';
-import 'package:fruit_hub/core/utils/widgets/custom_app_bar.dart';
+import 'package:fruit_hub/core/utils/widgets/build_app_bar.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_button.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_text_form_field.dart';
 
@@ -15,7 +15,7 @@ class ForgotPasswordView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(
+      appBar: buildAppBar(
         context,
         title: S.of(context).forgotPassword,
       ),

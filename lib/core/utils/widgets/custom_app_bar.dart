@@ -1,33 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/app_styles/app_text_styles.dart';
+import 'package:fruit_hub/core/utils/widgets/notification_widget.dart';
 
-AppBar customAppBar(
-  BuildContext context, {
-  required String title,
-  bool? showLeading = true,
-}) {
-  return AppBar(
-    backgroundColor: Colors.white,
-    elevation: 0,
-    toolbarHeight: 80,
-    title: Padding(
-      padding: const EdgeInsets.only(top: 16),
-      child: Text(
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final String title;
+
+  const CustomAppBar({
+    super.key,
+    required this.title,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      elevation: 0,
+      backgroundColor: Colors.white,
+      centerTitle: true,
+      title: Text(
         title,
         style: TextStyles.bold19,
       ),
-    ),
-    centerTitle: true,
-    leading: showLeading!
-        ? Padding(
-            padding: const EdgeInsets.only(top: 16),
-            child: IconButton(
-              icon: const Icon(Icons.arrow_back_ios),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          )
-        : const SizedBox.shrink(),
-  );
+      leading: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: IconButton(
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(
+            Icons.arrow_back_ios,
+          ),
+        ),
+      ),
+      actions: [
+        NotificationWidget(),
+      ],
+    );
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }
