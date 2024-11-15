@@ -14,9 +14,12 @@ class ActiveItem extends StatelessWidget {
   final String image;
   @override
   Widget build(BuildContext context) {
+    var isArabic = Localizations.localeOf(context).languageCode == 'ar';
+
     return Center(
       child: Container(
-        padding: const EdgeInsets.only(left: 16),
+        padding:
+            isArabic ? EdgeInsets.only(left: 16) : EdgeInsets.only(right: 16),
         decoration: ShapeDecoration(
           color: const Color(0xFFEEEEEE),
           shape: RoundedRectangleBorder(
@@ -37,12 +40,10 @@ class ActiveItem extends StatelessWidget {
               ),
               child: Center(child: SvgPicture.asset(image)),
             ),
-            const SizedBox(
-              width: 4,
-            ),
+            const SizedBox(width: 8),
             Text(
               name,
-              style: TextStyles.semiBold11.copyWith(
+              style: TextStyles.bold13.copyWith(
                 color: AppColors.primaryColor,
               ),
             )

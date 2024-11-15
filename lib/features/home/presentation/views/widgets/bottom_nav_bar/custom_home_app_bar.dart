@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/helper/get_user.dart';
 import 'package:fruit_hub/core/utils/app_styles/app_colors.dart';
 import 'package:fruit_hub/core/utils/app_styles/app_images.dart';
 import 'package:fruit_hub/core/utils/app_styles/app_text_styles.dart';
@@ -20,7 +21,7 @@ class CustomHomeAppBar extends StatelessWidget {
         ),
       ),
       subtitle: Text(
-        S.of(context).username,
+        getUser().name,
         style: TextStyles.bold16,
       ),
       trailing: Container(
