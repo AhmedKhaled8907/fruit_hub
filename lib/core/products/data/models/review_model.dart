@@ -45,4 +45,12 @@ class ReviewModel {
       'reviewDescription': reviewDescription,
     };
   }
+
+  ReviewEntity toEntity() => ReviewEntity(
+        name: name,
+        image: image,
+        rating: rating,
+        date: date,
+        reviewDescription: reviewDescription,
+      );
 }
