@@ -25,12 +25,15 @@ class _SplashViewBodyState extends State<SplashViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    var isEnglish = Localizations.localeOf(context).languageCode == 'en';
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment:
+              isEnglish ? MainAxisAlignment.start : MainAxisAlignment.end,
           children: [
             SvgPicture.asset(Assets.imagesPlant),
           ],
