@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 import 'widgets/bottom_nav_bar/custom_bottom_nav_bar.dart';
-import 'widgets/home_view_body.dart';
+import 'widgets/home_view.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class MainView extends StatelessWidget {
+  const MainView({super.key});
   static const routeName = '/home';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: const HomeViewBody(),
+        child: const HomeView(),
       ),
       bottomNavigationBar: const CustomBottomNavBar(),
     );

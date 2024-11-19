@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/services/firebase_auth_service.dart';
 import 'package:fruit_hub/core/utils/app_styles/app_images.dart';
 import 'package:fruit_hub/features/auth/presentation/views/signin_view.dart';
-import 'package:fruit_hub/features/home/presentation/views/home_view.dart';
+import 'package:fruit_hub/features/home/presentation/views/main_view.dart';
 import 'package:svg_flutter/svg.dart';
 
 import '../../../../core/helper/constants.dart';
@@ -57,7 +57,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         if (isLoggedIn) {
           Navigator.pushNamedAndRemoveUntil(
             context,
-            HomeView.routeName,
+            MainView.routeName,
             (route) => false,
           );
         } else {
