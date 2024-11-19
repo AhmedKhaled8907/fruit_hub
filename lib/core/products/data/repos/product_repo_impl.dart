@@ -12,9 +12,26 @@ class ProductRepoImpl extends ProductRepo {
   ProductRepoImpl(this.databaseService);
 
   @override
-  Future<Either<Failure, List<ProductEntity>>> getBestSellingProducts() {
-    // TODO: implement getBestSellingProducts
-    throw UnimplementedError();
+  Future<Either<Failure, List<ProductEntity>>> getBestSellingProducts() async {
+    var data =
+        await databaseService.getData(path: BackEndPoints.getProducts, query: {
+      'limit': 10,
+      'orderBy': 'sellingCount',
+      'descending': true
+    }) as List<Map<String, dynamic>>;
+
+    try {
+      List<ProductEntity> products = data
+          .map(
+            (e) => ProductModel.fromJson(e).toEntity(),
+          )
+          .toList();
+      return right(products);
+    } catch (e) {
+      return left(
+        ServerFailure('لقد حدث خطأ ما. حاول مرة أخرى'),
+      );
+    }
   }
 
   @override
@@ -30,7 +47,9 @@ class ProductRepoImpl extends ProductRepo {
           .toList();
       return right(products);
     } catch (e) {
-      return left(ServerFailure('لقد حدث خطأ ما. حاول مرة أخرى'),);
+      return left(
+        ServerFailure('لقد حدث خطأ ما. حاول مرة أخرى'),
+      );
     }
   }
 }
