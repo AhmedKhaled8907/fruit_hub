@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/resources/app_routes.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/resources/app_colors.dart';
@@ -22,7 +23,7 @@ class DontHaveAnAccount extends StatelessWidget {
             color: const Color(0xff949D9E),
           ),
         ),
-        const SizedBox(width: 4),
+        const SizedBox(width: AppSize.s4),
         GestureDetector(
           onTap: () {
             GoRouter.of(context).push(

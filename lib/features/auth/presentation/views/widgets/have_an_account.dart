@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:fruit_hub/generated/l10n.dart';
 
 import '../../../../../core/utils/resources/app_colors.dart';
@@ -20,7 +21,7 @@ class HaveAnAccount extends StatelessWidget {
             color: const Color(0xff949D9E),
           ),
         ),
-        const SizedBox(width: 4),
+        const SizedBox(width: AppSize.s4),
         GestureDetector(
           onTap: () {
             Navigator.of(context).pop();

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/app_images.dart';
 import 'package:fruit_hub/core/utils/resources/app_styles.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg;
 
@@ -14,7 +15,7 @@ class FeaturedItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var itemWidth = MediaQuery.of(context).size.width - 32;
+    var itemWidth = context.width - AppSize.s32;
     var isArabic = Localizations.localeOf(context).languageCode == 'ar';
     return SizedBox(
       width: itemWidth,
@@ -38,9 +39,11 @@ class FeaturedItem extends StatelessWidget {
               ),
               Container(
                 width: itemWidth * 0.5,
-                padding: const EdgeInsets.symmetric(horizontal: 36),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: AppPadding.p32,
+                ),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4),
+                  borderRadius: BorderRadius.circular(AppSize.s4),
                   image: DecorationImage(
                     image: svg.Svg(
                       isArabic

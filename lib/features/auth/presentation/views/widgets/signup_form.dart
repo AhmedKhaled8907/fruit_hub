@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/helper/build_error_bar.dart';
 import 'package:fruit_hub/core/helper/app_validators.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 
 import '../../../../../core/utils/widgets/custom_button.dart';
 import '../../../../../core/utils/widgets/custom_text_form_field.dart';
@@ -31,6 +32,7 @@ class _SignupFormState extends State<SignupForm> {
       key: _formKey,
       autovalidateMode: autovalidateMode,
       child: Column(
+        spacing: AppSize.s16,
         children: [
           CustomTextFormField(
             onSaved: (value) {
@@ -42,7 +44,6 @@ class _SignupFormState extends State<SignupForm> {
             hintText: S.of(context).fullName,
             keyboardType: TextInputType.text,
           ),
-          const SizedBox(height: 16),
           CustomTextFormField(
             onSaved: (value) {
               email = value!;
@@ -53,7 +54,6 @@ class _SignupFormState extends State<SignupForm> {
             hintText: S.of(context).emailSignin,
             keyboardType: TextInputType.emailAddress,
           ),
-          const SizedBox(height: 16),
           PasswordField(
             onSaved: (value) {
               password = value!;
@@ -62,13 +62,12 @@ class _SignupFormState extends State<SignupForm> {
               return AppValidators.passwordValidator(value);
             },
           ),
-          const SizedBox(height: 16),
           TermsAndConditionsWidget(
             onChanged: (value) {
               isTermsAccepted = value;
             },
           ),
-          const SizedBox(height: 24),
+          const SizedBox(height: AppSize.s8),
           CustomButton(
             onPressed: () {
               FocusScope.of(context).unfocus();

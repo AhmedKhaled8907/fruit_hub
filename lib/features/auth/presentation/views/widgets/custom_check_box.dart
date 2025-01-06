@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/resources/app_assets.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:svg_flutter/svg.dart';
 
 import '../../../../../core/utils/resources/app_colors.dart';
@@ -21,21 +22,23 @@ class CustomCheckBox extends StatelessWidget {
         onChecked(!isChecked);
       },
       child: AnimatedContainer(
-        width: 24,
-        height: 24,
+        width: AppSize.s24,
+        height: AppSize.s24,
         duration: const Duration(milliseconds: 100),
         decoration: ShapeDecoration(
           color: isChecked ? AppColors.primaryColor : Colors.white,
           shape: RoundedRectangleBorder(
             side: BorderSide(
-              width: 1.50,
+              width: AppSize.s1_5,
               color: isChecked ? Colors.transparent : const Color(0xFFDCDEDE),
             ),
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(
+              AppSize.s8,
+            ),
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(2),
+          padding: const EdgeInsets.all(AppPadding.p2),
           child: isChecked
               ? SvgPicture.asset(
                   AppAssets.imagesCheck,

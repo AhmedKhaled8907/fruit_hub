@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/resources/app_colors.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:fruit_hub/generated/l10n.dart';
 
 import '../../../../../../core/utils/resources/app_styles.dart';
@@ -15,11 +16,11 @@ class FeaturedItemButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 32,
+      height: AppSize.s32,
       child: TextButton(
         style: TextButton.styleFrom(
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4),
+            borderRadius: BorderRadius.circular(AppSize.s4,),
           ),
           backgroundColor: Colors.white,
         ),

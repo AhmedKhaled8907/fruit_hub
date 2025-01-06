@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/helper/app_validators.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:fruit_hub/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 import 'package:fruit_hub/generated/l10n.dart';
 
@@ -30,6 +31,7 @@ class _SigninFormState extends State<SigninForm> {
       key: _formKey,
       autovalidateMode: autovalidateMode,
       child: Column(
+        spacing: AppSize.s16,
         children: [
           CustomTextFormField(
             onSaved: (value) {
@@ -41,7 +43,6 @@ class _SigninFormState extends State<SigninForm> {
             hintText: S.of(context).emailSignin,
             keyboardType: TextInputType.emailAddress,
           ),
-          const SizedBox(height: 16),
           PasswordField(
             onSaved: (value) {
               password = value!;
@@ -50,9 +51,8 @@ class _SigninFormState extends State<SigninForm> {
               return null;
             },
           ),
-          const SizedBox(height: 16),
           const ForgotPasswordWidget(),
-          const SizedBox(height: 36),
+          const SizedBox(height: AppSize.s20),
           CustomButton(
             title: S.of(context).signin,
             onPressed: () {

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/helper/build_error_bar.dart';
 import 'package:fruit_hub/core/helper/constants.dart';
 import 'package:fruit_hub/core/utils/resources/app_assets.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_social_button.dart';
 import 'package:fruit_hub/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 
@@ -22,14 +23,15 @@ class SigninViewBody extends StatelessWidget {
           horizontal: kHorizontalPadding,
         ),
         child: Column(
+          spacing: AppSize.s16,
           children: [
-            const SizedBox(height: 24),
+            const SizedBox(height: AppSize.s8),
             const SigninForm(),
-            const SizedBox(height: 36),
+            const SizedBox(height: AppSize.s20),
             const DontHaveAnAccount(),
-            const SizedBox(height: 36),
+            const SizedBox(height: AppSize.s20),
             const CustomDivider(),
-            const SizedBox(height: 24),
+            const SizedBox(height: AppSize.s8),
             CustomSocialButton(
               onPressed: () {
                 context.read<SigninCubit>().signinUserWithGoogle();
@@ -37,7 +39,6 @@ class SigninViewBody extends StatelessWidget {
               title: S.of(context).signinWithGoogle,
               image: AppAssets.imagesGoogleIcon,
             ),
-            const SizedBox(height: 16),
             CustomSocialButton(
               onPressed: () {
                 context.read<SigninCubit>().signinUserWithFacebook();
@@ -45,7 +46,6 @@ class SigninViewBody extends StatelessWidget {
               title: S.of(context).signinWithFacebook,
               image: AppAssets.imagesFacebookIcon,
             ),
-            const SizedBox(height: 16),
             CustomSocialButton(
               onPressed: () {
                 // context.read<SigninCubit>().signinUserWithApple();
@@ -57,7 +57,7 @@ class SigninViewBody extends StatelessWidget {
               title: S.of(context).signinWithApple,
               image: AppAssets.imagesApplIcon,
             ),
-            const SizedBox(height: 36),
+            const SizedBox(height: AppSize.s20),
           ],
         ),
       ),

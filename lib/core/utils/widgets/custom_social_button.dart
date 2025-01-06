@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/utils/resources/app_colors.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:svg_flutter/svg.dart';
 
 import '../resources/app_styles.dart';
@@ -18,17 +20,19 @@ class CustomSocialButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 56,
+      height: AppSize.s54,
       child: TextButton(
         style: TextButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 18),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppPadding.p16,
+          ),
           shape: RoundedRectangleBorder(
             side: const BorderSide(
               color: Color(0xffDDDFDF),
             ),
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(AppSize.s16),
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: AppColors.white,
         ),
         onPressed: onPressed,
         child: ListTile(
@@ -40,7 +44,7 @@ class CustomSocialButton extends StatelessWidget {
             title,
             textAlign: TextAlign.center,
             style: TextStyles.semiBold16.copyWith(
-              color: Colors.black,
+              color: AppColors.black,
             ),
           ),
         ),

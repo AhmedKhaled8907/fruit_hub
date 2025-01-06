@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:fruit_hub/features/auth/presentation/views/widgets/custom_check_box.dart';
 
 import '../../../../../core/utils/resources/app_colors.dart';
@@ -25,6 +26,7 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
+      spacing: AppSize.s16,
       children: [
         CustomCheckBox(
           isChecked: isTermsAccepted,
@@ -34,7 +36,6 @@ class _TermsAndConditionsWidgetState extends State<TermsAndConditionsWidget> {
             setState(() {});
           },
         ),
-        const SizedBox(width: 16),
         Expanded(
           child: Text.rich(
             TextSpan(

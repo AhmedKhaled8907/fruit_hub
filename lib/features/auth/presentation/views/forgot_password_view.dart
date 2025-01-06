@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/helper/constants.dart';
 import 'package:fruit_hub/core/utils/resources/app_styles.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:fruit_hub/core/utils/widgets/build_app_bar.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_button.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_text_form_field.dart';
@@ -25,15 +26,14 @@ class ForgotPasswordView extends StatelessWidget {
             horizontal: kHorizontalPadding,
           ),
           child: Column(
+            spacing: AppSize.s32,
             children: [
-              const SizedBox(height: 24),
               Text(
                 S.of(context).dontWorry,
                 style: TextStyles.semiBold16.copyWith(
                   color: const Color(0xff949D9E),
                 ),
               ),
-              const SizedBox(height: 32),
               CustomTextFormField(
                 validator: (value) {
                   return AppValidators.emailValidator(value);
@@ -41,7 +41,6 @@ class ForgotPasswordView extends StatelessWidget {
                 hintText: S.of(context).emailSignin,
                 keyboardType: TextInputType.emailAddress,
               ),
-              const SizedBox(height: 32),
               CustomButton(
                 onPressed: () {
                   Navigator.of(context).pop();

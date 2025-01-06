@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/resources/app_colors.dart';
 import 'package:fruit_hub/core/utils/resources/app_styles.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
 class ActiveItem extends StatelessWidget {
@@ -18,29 +19,38 @@ class ActiveItem extends StatelessWidget {
 
     return Center(
       child: Container(
-        padding:
-            isArabic ? EdgeInsets.only(left: 16) : EdgeInsets.only(right: 16),
+        padding: isArabic
+            ? EdgeInsets.only(
+                left: AppPadding.p16,
+              )
+            : EdgeInsets.only(
+                right: AppPadding.p16,
+              ),
         decoration: ShapeDecoration(
           color: const Color(0xFFEEEEEE),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(AppSize.s30),
           ),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
+          spacing: AppSize.s8,
           children: [
             Container(
-              width: 30,
-              height: 30,
+              width: AppSize.s30,
+              height: AppSize.s30,
               decoration: ShapeDecoration(
                 color: const Color(0xFF1B5E37),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
+                  borderRadius: BorderRadius.circular(
+                    AppSize.s30,
+                  ),
                 ),
               ),
-              child: Center(child: SvgPicture.asset(image)),
+              child: Center(
+                child: SvgPicture.asset(image),
+              ),
             ),
-            const SizedBox(width: 8),
             Text(
               name,
               style: TextStyles.bold13.copyWith(
