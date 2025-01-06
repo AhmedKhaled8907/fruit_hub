@@ -1,7 +1,8 @@
 {
-    "cSpell.language": "en,en-US,lorem,ar",
-    "cSpell.words": [
-        "جوجل",
-        "فيسبوك"
-    ]
+  "cSpell.language": "en,en-US,lorem,ar",
+  "cSpell.words": [
+    "جوجل",
+    "فيسبوك"
+  ],
+  "dart.flutterSdkPath": ".fvm/versions/stable"
 }

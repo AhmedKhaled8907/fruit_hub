@@ -9,4 +9,9 @@ abstract class AppColors {
   static const Color lightSecondaryColor = Color(0xFFF8C76D);
   static const Color textFormFieldColor = Color(0xFFF9FAFA);
   static const Color itemBackgroundColor = Color(0xFFF3F5F7);
+
+
+  // Normal Colors 
+
+  static const Color white = Colors.white;
 }

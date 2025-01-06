@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/helper/get_user.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_colors.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_images.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_text_styles.dart';
+import 'package:fruit_hub/core/utils/resources/app_colors.dart';
+import 'package:fruit_hub/core/utils/resources/app_assets.dart';
+import 'package:fruit_hub/core/utils/resources/app_styles.dart';
 import 'package:fruit_hub/generated/l10n.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -13,7 +13,7 @@ class CustomHomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      leading: Image.asset(Assets.imagesProfileImage),
+      leading: Image.asset(AppAssets.imagesProfileImage),
       title: Text(
         S.of(context).goodMorning,
         style: TextStyles.regular16.copyWith(
@@ -31,7 +31,7 @@ class CustomHomeAppBar extends StatelessWidget {
           shape: OvalBorder(),
         ),
         child: SvgPicture.asset(
-          Assets.imagesNotification,
+          AppAssets.imagesNotification,
         ),
       ),
     );

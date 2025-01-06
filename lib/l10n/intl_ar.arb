@@ -1,4 +1,5 @@
 {
+    "appTitle": "FruitHUB",
     "//onBoardingView": "onBoardingView Comment",
     "skip": "تخطى",
     "onBoardingTitle1": "مرحبًا بك في",
@@ -36,6 +37,7 @@
     "termsAndConditions": " الشروط والأحكام الخاصة بنا",
     "createNewAccountSignup":"إنشاء حساب جديد",
     "haveAnAccount":"تمتلك حساب بالفعل؟",
+    "signupSuccessfully":"تم التسجيل بنجاح",
 
     "//homeView": "homeView Comment",
     "goodMorning":"صباح الخير",

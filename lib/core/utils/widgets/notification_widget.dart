@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_images.dart';
+import 'package:fruit_hub/core/utils/resources/app_assets.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 
 class NotificationWidget extends StatelessWidget {
@@ -8,14 +9,18 @@ class NotificationWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16),
-      padding: EdgeInsets.all(12),
+      margin: const EdgeInsets.symmetric(
+        horizontal: AppMargin.m16,
+      ),
+      padding: EdgeInsets.all(
+        AppPadding.p16,
+      ),
       decoration: ShapeDecoration(
         color: Color(0xffEEF8ED),
         shape: OvalBorder(),
       ),
       child: SvgPicture.asset(
-        Assets.imagesNotification,
+        AppAssets.imagesNotification,
       ),
     );
   }

@@ -5,7 +5,7 @@ import 'widgets/home_view.dart';
 
 class MainView extends StatelessWidget {
   const MainView({super.key});
-  static const routeName = '/home';
+  // static const routeName = '/home';
 
   @override
   Widget build(BuildContext context) {

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/utils/resources/app_routes.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../../core/utils/app_styles/app_colors.dart';
-import '../../../../../core/utils/app_styles/app_text_styles.dart';
+import '../../../../../core/utils/resources/app_colors.dart';
+import '../../../../../core/utils/resources/app_styles.dart';
 import '../../../../../generated/l10n.dart';
-import '../signup_view.dart';
 
 class DontHaveAnAccount extends StatelessWidget {
   const DontHaveAnAccount({
@@ -24,7 +25,9 @@ class DontHaveAnAccount extends StatelessWidget {
         const SizedBox(width: 4),
         GestureDetector(
           onTap: () {
-            Navigator.of(context).pushNamed(SignupView.routeName);
+            GoRouter.of(context).push(
+              AppRoutes.kSignUpRoute,
+            );
           },
           child: Text(
             S.of(context).createAccount,

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/features/best_selling/presentation/views/best_selling_view.dart';
+import 'package:fruit_hub/core/utils/resources/app_routes.dart';
 import 'package:fruit_hub/generated/l10n.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../../../core/utils/app_styles/app_colors.dart';
-import '../../../../../../core/utils/app_styles/app_text_styles.dart';
+import '../../../../../../core/utils/resources/app_colors.dart';
+import '../../../../../../core/utils/resources/app_styles.dart';
 
 class BestSellingHeader extends StatelessWidget {
   const BestSellingHeader({
@@ -21,7 +22,9 @@ class BestSellingHeader extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-            Navigator.of(context).pushNamed(BestSellingView.routeName);
+            GoRouter.of(context).push(
+              AppRoutes.kBestSellingRoute,
+            );
           },
           child: Text(
             S.of(context).more,

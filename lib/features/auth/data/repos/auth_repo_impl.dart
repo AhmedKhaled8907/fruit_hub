@@ -3,7 +3,7 @@ import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fruit_hub/core/errors/failure.dart';
+import 'package:fruit_hub/core/errors/custom_failure.dart';
 import 'package:fruit_hub/core/helper/back_end_points.dart';
 import 'package:fruit_hub/core/helper/constants.dart';
 import 'package:fruit_hub/core/services/database_service.dart';

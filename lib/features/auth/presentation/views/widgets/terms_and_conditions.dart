@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/features/auth/presentation/views/widgets/custom_check_box.dart';
 
-import '../../../../../core/utils/app_styles/app_colors.dart';
-import '../../../../../core/utils/app_styles/app_text_styles.dart';
+import '../../../../../core/utils/resources/app_colors.dart';
+import '../../../../../core/utils/resources/app_styles.dart';
 import '../../../../../generated/l10n.dart';
 
 class TermsAndConditionsWidget extends StatefulWidget {

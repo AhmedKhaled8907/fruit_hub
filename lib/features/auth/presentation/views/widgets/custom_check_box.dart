@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_images.dart';
+import 'package:fruit_hub/core/utils/resources/app_assets.dart';
 import 'package:svg_flutter/svg.dart';
 
-import '../../../../../core/utils/app_styles/app_colors.dart';
+import '../../../../../core/utils/resources/app_colors.dart';
 
 class CustomCheckBox extends StatelessWidget {
   const CustomCheckBox({
@@ -38,7 +38,7 @@ class CustomCheckBox extends StatelessWidget {
           padding: const EdgeInsets.all(2),
           child: isChecked
               ? SvgPicture.asset(
-                  Assets.imagesCheck,
+                  AppAssets.imagesCheck,
                 )
               : const SizedBox(),
         ),

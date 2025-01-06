@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruit_hub/core/helper/my_validators.dart';
+import 'package:fruit_hub/core/helper/app_validators.dart';
 import 'package:fruit_hub/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 import 'package:fruit_hub/generated/l10n.dart';
 

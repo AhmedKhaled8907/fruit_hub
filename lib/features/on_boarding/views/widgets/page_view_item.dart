@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/helper/constants.dart';
 import 'package:fruit_hub/core/services/shared_preferences_singleton.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_colors.dart';
+import 'package:fruit_hub/core/utils/resources/app_colors.dart';
+import 'package:fruit_hub/core/utils/resources/app_routes.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
+import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg.dart';
 
-import '../../../../core/utils/app_styles/app_text_styles.dart';
+import '../../../../core/utils/resources/app_styles.dart';
 import '../../../../generated/l10n.dart';
-import '../../../auth/presentation/views/signin_view.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({
@@ -28,7 +30,7 @@ class PageViewItem extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.5,
+          height: context.height * 0.5,
           width: double.infinity,
           child: Stack(
             children: [
@@ -47,8 +49,9 @@ class PageViewItem extends StatelessWidget {
               GestureDetector(
                 onTap: () {
                   Prefs.setBool(kIsBoardingViewSeen, true);
-                  Navigator.of(context)
-                      .pushReplacementNamed(SigninView.routeName);
+                  GoRouter.of(context).pushReplacement(
+                    AppRoutes.kSignInRoute,
+                  );
                 },
                 child: Visibility(
                   visible: isVisible,

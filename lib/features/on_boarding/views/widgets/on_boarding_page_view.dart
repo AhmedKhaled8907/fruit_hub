@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_images.dart';
+import 'package:fruit_hub/core/utils/resources/app_assets.dart';
 import 'package:fruit_hub/features/on_boarding/views/widgets/page_view_item.dart';
 
-import '../../../../core/utils/app_styles/app_colors.dart';
-import '../../../../core/utils/app_styles/app_text_styles.dart';
+import '../../../../core/utils/resources/app_colors.dart';
+import '../../../../core/utils/resources/app_styles.dart';
 import '../../../../generated/l10n.dart';
 
 class OnBoardingPageView extends StatelessWidget {
@@ -20,8 +20,8 @@ class OnBoardingPageView extends StatelessWidget {
       children: [
         PageViewItem(
           isVisible: true,
-          image: Assets.imagesPageViewItem1Image,
-          backgroundImage: Assets.imagesPageViewItem1BackgroundImage,
+          image: AppAssets.imagesPageViewItem1Image,
+          backgroundImage: AppAssets.imagesPageViewItem1BackgroundImage,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -52,8 +52,8 @@ class OnBoardingPageView extends StatelessWidget {
         ),
         PageViewItem(
           isVisible: false,
-          image: Assets.imagesPageViewItem2Image,
-          backgroundImage: Assets.imagesPageViewItem2BackgroundImage,
+          image: AppAssets.imagesPageViewItem2Image,
+          backgroundImage: AppAssets.imagesPageViewItem2BackgroundImage,
           title: Text(
             S.of(context).onBoardingTitle2,
             textAlign: TextAlign.center,

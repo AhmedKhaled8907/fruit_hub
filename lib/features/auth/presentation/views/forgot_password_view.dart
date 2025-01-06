@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/helper/constants.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_text_styles.dart';
+import 'package:fruit_hub/core/utils/resources/app_styles.dart';
 import 'package:fruit_hub/core/utils/widgets/build_app_bar.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_button.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_text_form_field.dart';
 
-import '../../../../core/helper/my_validators.dart';
+import '../../../../core/helper/app_validators.dart';
 import '../../../../generated/l10n.dart';
 
 class ForgotPasswordView extends StatelessWidget {
   const ForgotPasswordView({super.key});
-  static const String routeName = '/forgot-password';
+  // static const String routeName = '/forgot-password';
 
   @override
   Widget build(BuildContext context) {

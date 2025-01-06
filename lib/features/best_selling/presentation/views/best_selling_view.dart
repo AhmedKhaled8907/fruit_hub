@@ -5,7 +5,7 @@ import 'widgets/best_selling_view_body.dart';
 
 class BestSellingView extends StatelessWidget {
   const BestSellingView({super.key});
-  static const routeName = '/bestSellingView';
+  // static const routeName = '/bestSellingView';
 
   @override
   Widget build(BuildContext context) {

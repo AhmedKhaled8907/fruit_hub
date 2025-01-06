@@ -1,13 +1,15 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/helper/constants.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_colors.dart';
+import 'package:fruit_hub/core/utils/resources/app_colors.dart';
+import 'package:fruit_hub/core/utils/resources/app_routes.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_button.dart';
 import 'package:fruit_hub/features/on_boarding/views/widgets/on_boarding_page_view.dart';
 import 'package:fruit_hub/generated/l10n.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/services/shared_preferences_singleton.dart';
-import '../../../auth/presentation/views/signin_view.dart';
 
 class OnBoardingViewBody extends StatefulWidget {
   const OnBoardingViewBody({super.key});
@@ -51,15 +53,17 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         DotsIndicator(
           dotsCount: 2,
           decorator: DotsDecorator(
-            activeSize: const Size.square(12),
-            size: const Size.square(12),
+            activeSize: const Size.square(AppSize.s12),
+            size: const Size.square(AppSize.s12),
             activeColor: AppColors.primaryColor,
             color: currentPage == 0
-                ? AppColors.primaryColor.withOpacity(0.5)
+                ? AppColors.primaryColor.withValues(
+                    alpha: AppSize.s0_5,
+                  )
                 : AppColors.primaryColor,
           ),
         ),
-        const SizedBox(height: 28),
+        const SizedBox(height: AppSize.s26),
         Visibility(
           visible: currentPage == 1,
           maintainSize: true,
@@ -72,14 +76,15 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             child: CustomButton(
               onPressed: () {
                 Prefs.setBool(kIsBoardingViewSeen, true);
-                Navigator.of(context)
-                    .pushReplacementNamed(SigninView.routeName);
+                GoRouter.of(context).pushReplacement(
+                  AppRoutes.kSignInRoute,
+                );
               },
               title: S.of(context).onBoardingStartNow,
             ),
           ),
         ),
-        const SizedBox(height: 43),
+        const SizedBox(height: AppSize.s40),
       ],
     );
   }

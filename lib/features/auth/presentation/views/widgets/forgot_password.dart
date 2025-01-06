@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/utils/resources/app_routes.dart';
 import 'package:fruit_hub/generated/l10n.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../../core/utils/app_styles/app_colors.dart';
-import '../../../../../core/utils/app_styles/app_text_styles.dart';
-import '../forgot_password_view.dart';
+import '../../../../../core/utils/resources/app_colors.dart';
+import '../../../../../core/utils/resources/app_styles.dart';
 
 class ForgotPasswordWidget extends StatelessWidget {
   const ForgotPasswordWidget({
@@ -14,8 +15,8 @@ class ForgotPasswordWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(
-          ForgotPasswordView.routeName,
+        GoRouter.of(context).push(
+          AppRoutes.kForgotPasswordRoute,
         );
       },
       child: Align(

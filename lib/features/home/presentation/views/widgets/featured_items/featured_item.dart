@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/app_images.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_text_styles.dart';
+import 'package:fruit_hub/core/utils/resources/app_styles.dart';
 import 'package:svg_flutter/svg_flutter.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg;
 

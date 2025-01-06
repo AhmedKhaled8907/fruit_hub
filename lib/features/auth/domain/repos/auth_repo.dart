@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:fruit_hub/core/errors/failure.dart';
+import 'package:fruit_hub/core/errors/custom_failure.dart';
 import 'package:fruit_hub/features/auth/domain/entities/user_entity.dart';
 
 abstract class AuthRepo {
@@ -24,6 +24,4 @@ abstract class AuthRepo {
   Future<void> saveUserData({required UserEntity user});
 
   Future<UserEntity> getUserData({required String uId});
-
-  
 }

@@ -26,6 +26,16 @@ class ReviewModel {
     );
   }
 
+    toJson() {
+    return {
+      'name': name,
+      'image': image,
+      'rating': rating,
+      'date': date,
+      'reviewDescription': reviewDescription,
+    };
+  }
+
   factory ReviewModel.fromEntity(ReviewEntity entity) {
     return ReviewModel(
       name: entity.name,
@@ -36,15 +46,7 @@ class ReviewModel {
     );
   }
 
-  toJson() {
-    return {
-      'name': name,
-      'image': image,
-      'rating': rating,
-      'date': date,
-      'reviewDescription': reviewDescription,
-    };
-  }
+
 
   ReviewEntity toEntity() => ReviewEntity(
         name: name,

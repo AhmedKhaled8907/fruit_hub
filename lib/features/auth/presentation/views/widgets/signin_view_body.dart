@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruit_hub/core/helper/build_error_bar.dart';
 import 'package:fruit_hub/core/helper/constants.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_images.dart';
+import 'package:fruit_hub/core/utils/resources/app_assets.dart';
 import 'package:fruit_hub/core/utils/widgets/custom_social_button.dart';
 import 'package:fruit_hub/features/auth/presentation/cubits/signin_cubit/signin_cubit.dart';
 
@@ -35,7 +35,7 @@ class SigninViewBody extends StatelessWidget {
                 context.read<SigninCubit>().signinUserWithGoogle();
               },
               title: S.of(context).signinWithGoogle,
-              image: Assets.imagesGoogleIcon,
+              image: AppAssets.imagesGoogleIcon,
             ),
             const SizedBox(height: 16),
             CustomSocialButton(
@@ -43,7 +43,7 @@ class SigninViewBody extends StatelessWidget {
                 context.read<SigninCubit>().signinUserWithFacebook();
               },
               title: S.of(context).signinWithFacebook,
-              image: Assets.imagesFacebookIcon,
+              image: AppAssets.imagesFacebookIcon,
             ),
             const SizedBox(height: 16),
             CustomSocialButton(
@@ -55,7 +55,7 @@ class SigninViewBody extends StatelessWidget {
                 );
               },
               title: S.of(context).signinWithApple,
-              image: Assets.imagesApplIcon,
+              image: AppAssets.imagesApplIcon,
             ),
             const SizedBox(height: 36),
           ],

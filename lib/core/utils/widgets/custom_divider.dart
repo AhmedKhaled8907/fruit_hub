@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../generated/l10n.dart';
-import '../app_styles/app_text_styles.dart';
+import '../resources/app_styles.dart';
 
 class CustomDivider extends StatelessWidget {
   const CustomDivider({

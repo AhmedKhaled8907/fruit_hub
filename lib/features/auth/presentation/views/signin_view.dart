@@ -10,7 +10,7 @@ import 'widgets/signin_view_body_bloc_consumer.dart';
 
 class SigninView extends StatelessWidget {
   const SigninView({super.key});
-  static const routeName = '/login';
+  // static const routeName = '/login';
 
   @override
   Widget build(BuildContext context) {

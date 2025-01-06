@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/services/firebase_auth_service.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_images.dart';
-import 'package:fruit_hub/features/auth/presentation/views/signin_view.dart';
-import 'package:fruit_hub/features/home/presentation/views/main_view.dart';
+import 'package:fruit_hub/core/utils/resources/app_assets.dart';
+import 'package:fruit_hub/core/utils/resources/app_routes.dart';
+import 'package:go_router/go_router.dart';
 import 'package:svg_flutter/svg.dart';
 
 import '../../../../core/helper/constants.dart';
 import '../../../../core/services/shared_preferences_singleton.dart';
-import '../../../on_boarding/views/on_boarding_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -35,12 +34,14 @@ class _SplashViewBodyState extends State<SplashViewBody> {
           mainAxisAlignment:
               isEnglish ? MainAxisAlignment.start : MainAxisAlignment.end,
           children: [
-            SvgPicture.asset(Assets.imagesPlant),
+            SvgPicture.asset(
+              AppAssets.imagesPlant,
+            ),
           ],
         ),
-        SvgPicture.asset(Assets.imagesLogo),
+        SvgPicture.asset(AppAssets.imagesLogo),
         SvgPicture.asset(
-          Assets.imagesSplashBottom,
+          AppAssets.imagesSplashBottom,
           fit: BoxFit.fill,
         ),
       ],
@@ -55,23 +56,17 @@ class _SplashViewBodyState extends State<SplashViewBody> {
         var isLoggedIn = FirebaseAuthService().isSignedIn();
 
         if (isLoggedIn) {
-          Navigator.pushNamedAndRemoveUntil(
-            context,
-            MainView.routeName,
-            (route) => false,
+          GoRouter.of(context).pushReplacement(
+            AppRoutes.kMainRoute,
           );
         } else {
-          Navigator.pushNamedAndRemoveUntil(
-            context,
-            SigninView.routeName,
-            (route) => false,
+          GoRouter.of(context).pushReplacement(
+            AppRoutes.kSignInRoute,
           );
         }
       } else if (mounted) {
-        Navigator.pushNamedAndRemoveUntil(
-          context,
-          OnBoardingView.routeName,
-          (route) => false,
+        GoRouter.of(context).pushReplacement(
+          AppRoutes.kOnBoardingRoute,
         );
       }
     });

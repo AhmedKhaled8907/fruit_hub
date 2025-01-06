@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_colors.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_text_styles.dart';
+import 'package:fruit_hub/core/utils/resources/app_colors.dart';
+import 'package:fruit_hub/core/utils/resources/app_styles.dart';
 
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
@@ -18,7 +18,6 @@ class CustomTextFormField extends StatelessWidget {
   final Widget? suffixIcon;
   final void Function(String?)? onSaved;
   final String? Function(String?)? validator;
-
   final bool obscureText;
 
   @override

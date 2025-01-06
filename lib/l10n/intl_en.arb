@@ -1,4 +1,5 @@
 {
+    "appTitle": "FruitHUB",
     "//onBoardingView": "onBoardingView Comment",
     "skip": "Skip",
     "onBoardingTitle1": "Welcome to FruitHUB",
@@ -36,6 +37,8 @@
     "termsAndConditions": "our Terms and Conditions",
     "createNewAccountSignup": "Create New Account",
     "haveAnAccount": "Already have an account?",
+    "signupSuccessfully":"Sign up successfully",
+
 
     "//homeView": "homeView Comment",
     "goodMorning": "Good Morning",

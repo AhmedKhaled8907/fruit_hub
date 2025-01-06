@@ -11,11 +11,11 @@ import 'firebase_auth_service.dart';
 final getIt = GetIt.instance;
 
 void setupGetIt() {
-  getIt.registerSingleton<FirebaseAuthService>(
-    FirebaseAuthService(),
-  );
   getIt.registerSingleton<DatabaseService>(
     FirestoreService(),
+  );
+  getIt.registerSingleton<FirebaseAuthService>(
+    FirebaseAuthService(),
   );
   getIt.registerSingleton<AuthRepo>(
     AuthRepoImpl(

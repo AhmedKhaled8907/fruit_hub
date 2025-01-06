@@ -14,7 +14,9 @@ class HomeView extends StatelessWidget {
       create: (context) => ProductsCubit(
         getIt.get<ProductRepo>(),
       ),
-      child: HomeViewBody(),
+      child: Scaffold(
+        body: HomeViewBody(),
+      ),
     );
   }
 }

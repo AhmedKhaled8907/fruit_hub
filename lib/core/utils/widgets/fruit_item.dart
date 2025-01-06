@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/app_images.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_colors.dart';
-import 'package:fruit_hub/core/utils/app_styles/app_text_styles.dart';
+import 'package:fruit_hub/core/utils/resources/app_colors.dart';
+import 'package:fruit_hub/core/utils/resources/app_styles.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:fruit_hub/generated/l10n.dart';
 
 class FruitItem extends StatelessWidget {
@@ -10,6 +11,10 @@ class FruitItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.symmetric(
+        vertical: AppSize.s8,
+        horizontal: AppSize.s12,
+      ),
       decoration: ShapeDecoration(
         color: Color(0xFFF3F5F7),
         shape: RoundedRectangleBorder(
@@ -20,7 +25,7 @@ class FruitItem extends StatelessWidget {
         children: [
           Positioned(
             top: 0,
-            right: 0,
+            right: -8,
             child: IconButton(
               onPressed: () {},
               icon: Icon(
@@ -30,15 +35,24 @@ class FruitItem extends StatelessWidget {
           ),
           Positioned.fill(
             child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              spacing: AppSize.s8,
               children: [
-                const SizedBox(height: 20),
-                Image.asset(
-                  Assets.imagesWatermelonTest,
-                  fit: BoxFit.fill,
+                const SizedBox(
+                  height: AppSize.s8,
                 ),
-                const SizedBox(height: 24),
+                Center(
+                  child: Image.asset(
+                    Assets.imagesWatermelonTest,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                const SizedBox(
+                  height: AppSize.s4,
+                ),
                 ListTile(
-                  contentPadding: const EdgeInsets.symmetric(horizontal: 8),
+                  contentPadding: EdgeInsets.zero,
                   title: Text(
                     S.of(context).watermelon,
                     textAlign: TextAlign.start,
@@ -81,7 +95,7 @@ class FruitItem extends StatelessWidget {
                     backgroundColor: AppColors.primaryColor,
                     child: Icon(
                       Icons.add,
-                      color: Colors.white,
+                      color: AppColors.white,
                     ),
                   ),
                 ),
