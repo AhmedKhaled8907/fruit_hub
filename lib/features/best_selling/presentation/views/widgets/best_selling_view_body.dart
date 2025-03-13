@@ -7,16 +7,19 @@ class BestSellingViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
+    return const Padding(
+      padding: EdgeInsets.symmetric(
         horizontal: AppPadding.p16,
       ),
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
-            child: const SizedBox(height: AppSize.s24),
+            child: SizedBox(height: AppSize.s24),
           ),
           BestSellingGridView(),
+          SliverToBoxAdapter(
+            child: SizedBox(height: AppSize.s24),
+          ),
         ],
       ),
     );

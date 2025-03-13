@@ -12,19 +12,19 @@ class CustomDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
+        const Expanded(
           child: Divider(
             color: Color(0xffDDDFDF),
           ),
         ),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Text(
             S.of(context).or,
             style: TextStyles.semiBold16,
           ),
         ),
-        Expanded(
+        const Expanded(
           child: Divider(
             color: Color(0xffDDDFDF),
           ),

@@ -20,10 +20,10 @@ class ActiveItem extends StatelessWidget {
     return Center(
       child: Container(
         padding: isArabic
-            ? EdgeInsets.only(
+            ? const EdgeInsets.only(
                 left: AppPadding.p16,
               )
-            : EdgeInsets.only(
+            : const EdgeInsets.only(
                 right: AppPadding.p16,
               ),
         decoration: ShapeDecoration(

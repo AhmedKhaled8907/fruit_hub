@@ -6,6 +6,8 @@ class AppAssets {
 
   static const String imagesApplIcon = "assets/images/appl_icon.svg";
 
+  static const String imagesBackArrow = "assets/images/back_arrow.svg";
+
   static const String imagesCheck = "assets/images/Check.svg";
 
   static const String imagesFacebookIcon = "assets/images/facebook_icon.svg";

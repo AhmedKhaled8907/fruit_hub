@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_images.dart';
+import 'package:fruit_hub/core/utils/resources/app_assets.dart';
 import 'package:fruit_hub/core/utils/resources/app_colors.dart';
 import 'package:fruit_hub/core/utils/resources/app_styles.dart';
 import 'package:fruit_hub/core/utils/resources/app_values.dart';
@@ -16,7 +16,7 @@ class FruitItem extends StatelessWidget {
         horizontal: AppSize.s12,
       ),
       decoration: ShapeDecoration(
-        color: Color(0xFFF3F5F7),
+        color: AppColors.fruitBackgroundColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
         ),
@@ -28,7 +28,7 @@ class FruitItem extends StatelessWidget {
             right: -8,
             child: IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.favorite_outline_outlined,
               ),
             ),
@@ -44,7 +44,7 @@ class FruitItem extends StatelessWidget {
                 ),
                 Center(
                   child: Image.asset(
-                    Assets.imagesWatermelonTest,
+                    AppAssets.imagesWatermelonTest,
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -91,11 +91,14 @@ class FruitItem extends StatelessWidget {
                     ),
                     textAlign: TextAlign.start,
                   ),
-                  trailing: CircleAvatar(
-                    backgroundColor: AppColors.primaryColor,
-                    child: Icon(
-                      Icons.add,
-                      color: AppColors.white,
+                  trailing: GestureDetector(
+                    onTap: () {},
+                    child: const CircleAvatar(
+                      backgroundColor: AppColors.primaryColor,
+                      child: Icon(
+                        Icons.add,
+                        color: AppColors.white,
+                      ),
                     ),
                   ),
                 ),

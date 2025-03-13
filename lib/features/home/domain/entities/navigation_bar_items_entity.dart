@@ -1,4 +1,5 @@
-import 'package:fruit_hub/core/utils/app_images.dart';
+
+import 'package:fruit_hub/core/utils/resources/app_assets.dart';
 
 import '../../../../generated/l10n.dart';
 
@@ -17,22 +18,22 @@ class NavigationBarItemsEntity {
 List<NavigationBarItemsEntity> navigationBarItems(context) => [
       NavigationBarItemsEntity(
         name: S.of(context).home,
-        activeItem: Assets.imagesVuesaxBoldHome,
-        inActiveItem: Assets.imagesVuesaxOutlineHome,
+        activeItem: AppAssets.imagesVuesaxBoldHome,
+        inActiveItem: AppAssets.imagesVuesaxOutlineHome,
       ),
       NavigationBarItemsEntity(
         name: S.of(context).products,
-        activeItem: Assets.imagesVuesaxBoldProducts,
-        inActiveItem: Assets.imagesVuesaxOutlineProducts,
+        activeItem: AppAssets.imagesVuesaxBoldProducts,
+        inActiveItem: AppAssets.imagesVuesaxOutlineProducts,
       ),
       NavigationBarItemsEntity(
         name: S.of(context).cart,
-        activeItem: Assets.imagesVuesaxBoldShoppingCart,
-        inActiveItem: Assets.imagesVuesaxOutlineShoppingCart,
+        activeItem: AppAssets.imagesVuesaxBoldShoppingCart,
+        inActiveItem: AppAssets.imagesVuesaxOutlineShoppingCart,
       ),
       NavigationBarItemsEntity(
         name: S.of(context).profile,
-        activeItem: Assets.imagesVuesaxBoldUser,
-        inActiveItem: Assets.imagesVuesaxOutlineUser,
+        activeItem: AppAssets.imagesVuesaxBoldUser,
+        inActiveItem: AppAssets.imagesVuesaxOutlineUser,
       ),
     ];

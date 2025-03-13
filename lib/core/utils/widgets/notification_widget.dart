@@ -12,10 +12,10 @@ class NotificationWidget extends StatelessWidget {
       margin: const EdgeInsets.symmetric(
         horizontal: AppMargin.m16,
       ),
-      padding: EdgeInsets.all(
+      padding: const EdgeInsets.all(
         AppPadding.p16,
       ),
-      decoration: ShapeDecoration(
+      decoration: const ShapeDecoration(
         color: Color(0xffEEF8ED),
         shape: OvalBorder(),
       ),

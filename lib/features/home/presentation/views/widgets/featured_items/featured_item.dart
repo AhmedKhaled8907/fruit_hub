@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/core/utils/app_images.dart';
+import 'package:fruit_hub/core/utils/resources/app_assets.dart';
 import 'package:fruit_hub/core/utils/resources/app_styles.dart';
 import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:svg_flutter/svg_flutter.dart';
@@ -33,7 +33,7 @@ class FeaturedItem extends StatelessWidget {
                 bottom: 0,
                 right: isArabic ? itemWidth * 0.4 : 0,
                 child: SvgPicture.asset(
-                  Assets.imagesPageViewItem2Image,
+                  AppAssets.imagesPageViewItem2Image,
                   fit: BoxFit.fill,
                 ),
               ),
@@ -47,8 +47,8 @@ class FeaturedItem extends StatelessWidget {
                   image: DecorationImage(
                     image: svg.Svg(
                       isArabic
-                          ? Assets.imagesFeaturedItemBackground
-                          : Assets.imagesImagesFeaturedItemBackground2,
+                          ? AppAssets.imagesFeaturedItemBackground
+                          : AppAssets.imagesImagesFeaturedItemBackground2,
                     ),
                     fit: BoxFit.fill,
                   ),

@@ -5,7 +5,6 @@ import 'widgets/best_selling_view_body.dart';
 
 class BestSellingView extends StatelessWidget {
   const BestSellingView({super.key});
-  // static const routeName = '/bestSellingView';
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class BestSellingView extends StatelessWidget {
       appBar: AppBarWithNotifications(
         title: S.of(context).bestSelling,
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: BestSellingViewBody(),
       ),
     );

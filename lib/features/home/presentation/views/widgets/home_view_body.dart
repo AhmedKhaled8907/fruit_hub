@@ -27,8 +27,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
+    return const Padding(
+      padding: EdgeInsets.symmetric(
         horizontal: kHorizontalPadding,
       ),
       child: CustomScrollView(
@@ -41,14 +41,14 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                 SearchTextField(),
                 FeaturedList(),
                 BestSellingHeader(),
-                const SizedBox(),
+                SizedBox(),
               ],
             ),
           ),
           BestSellingGridView(),
           SliverToBoxAdapter(
-            child: const SizedBox(
-              height: AppSize.s36,
+            child: SizedBox(
+              height: AppSize.s16,
             ),
           ),
         ],

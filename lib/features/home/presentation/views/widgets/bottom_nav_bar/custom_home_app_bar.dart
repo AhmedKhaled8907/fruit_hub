@@ -13,7 +13,10 @@ class CustomHomeAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: EdgeInsets.zero,
-      leading: Image.asset(AppAssets.imagesProfileImage),
+      leading: Image.asset(
+        AppAssets.imagesProfileImage,
+        fit: BoxFit.fill,
+      ),
       title: Text(
         S.of(context).goodMorning,
         style: TextStyles.regular16.copyWith(
@@ -25,8 +28,8 @@ class CustomHomeAppBar extends StatelessWidget {
         style: TextStyles.bold16,
       ),
       trailing: Container(
-        padding: EdgeInsets.all(12),
-        decoration: ShapeDecoration(
+        padding: const EdgeInsets.all(12),
+        decoration: const ShapeDecoration(
           color: Color(0xffEEF8ED),
           shape: OvalBorder(),
         ),

@@ -19,6 +19,7 @@ void main() async {
   await Prefs.init();
   setupGetIt();
   Bloc.observer = CustomBlocObserver();
+
   runApp(const FruitHub());
 }
 

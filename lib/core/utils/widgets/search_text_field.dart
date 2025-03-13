@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fruit_hub/core/utils/resources/app_colors.dart';
 import 'package:fruit_hub/core/utils/resources/app_assets.dart';
 import 'package:fruit_hub/core/utils/resources/app_styles.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:fruit_hub/generated/l10n.dart';
 import 'package:svg_flutter/svg.dart';
 
@@ -11,7 +12,7 @@ class SearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(boxShadow: const [
+      decoration: const BoxDecoration(boxShadow: [
         BoxShadow(
           color: Color(0x1A000000),
           blurRadius: 9,
@@ -24,8 +25,8 @@ class SearchTextField extends StatelessWidget {
         style: TextStyles.semiBold16,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 16,
+            horizontal: AppPadding.p20,
+            vertical: AppPadding.p16,
           ),
           hintText: S.of(context).search,
           hintStyle: TextStyles.regular13.copyWith(
@@ -34,11 +35,15 @@ class SearchTextField extends StatelessWidget {
           filled: true,
           fillColor: AppColors.textFormFieldColor,
           prefixIcon: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppPadding.p16,
+            ),
             child: SvgPicture.asset(AppAssets.imagesSearchIcon),
           ),
           suffixIcon: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppPadding.p20,
+            ),
             child: SvgPicture.asset(AppAssets.imagesFilter),
           ),
           enabledBorder: outline(),
@@ -52,7 +57,9 @@ class SearchTextField extends StatelessWidget {
 
   OutlineInputBorder outline() {
     return const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(4)),
+      borderRadius: BorderRadius.all(
+        Radius.circular(AppSize.s4),
+      ),
       borderSide: BorderSide(
         color: Color(0xffE6E9EA),
       ),

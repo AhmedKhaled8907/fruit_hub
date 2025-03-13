@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/core/utils/resources/app_values.dart';
 import 'package:fruit_hub/features/home/presentation/views/widgets/bottom_nav_bar/navigation_bar_item.dart';
 
 import '../../../../domain/entities/navigation_bar_items_entity.dart';
@@ -16,13 +17,12 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 72,
+      height: AppSize.s72,
       decoration: const ShapeDecoration(
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(AppSize.s30),
           ),
         ),
         shadows: [

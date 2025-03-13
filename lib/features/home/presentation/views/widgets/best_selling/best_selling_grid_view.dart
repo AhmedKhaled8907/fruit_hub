@@ -16,7 +16,7 @@ class BestSellingGridView extends StatelessWidget {
       ),
       itemCount: 6,
       itemBuilder: (BuildContext context, int index) {
-        return FruitItem();
+        return const FruitItem();
       },
     );
   }
